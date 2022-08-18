@@ -1,4 +1,3 @@
-/*eslint-disable */
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SignInPage from './pages/SignInPage';
@@ -8,9 +7,9 @@ import CitiesPage from './pages/CitiesPage';
 const App = () => (
   <BrowserRouter>
     <Routes>
-      <Route path='/signin' element={<SignInPage />} />
-      <Route path='/signup' element={<SignUpPage />} />
-      <Route path='/cities' element={<CitiesPage />} />
+      <Route path="/signin" element={<SignInPage />} />
+      <Route path="/signup" element={<SignUpPage />} />
+      <Route path="/cities" element={<CitiesPage />} />
     </Routes>
   </BrowserRouter>
 );
