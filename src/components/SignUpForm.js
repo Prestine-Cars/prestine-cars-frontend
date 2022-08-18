@@ -1,30 +1,31 @@
-// /*eslint-disable */
-// import React from 'react';
+/*eslint-disable */
+import React from 'react';
 
-// const SignUpForm = () => {
-//   return (
-//     <>
-//       <div>
-//         <form>
-//           <label htmlFor='email'>
-//             <span>Email</span>
-//             <input id='email' type='text' placeholder='Email' />
-//           </label>
-//           <label htmlFor='password'>
-//             <span>Password</span>
-//             <input id='password' type='password' placeholder='Password' />
-//           </label>
-//           <div>
-//             <button type='button'>Sign In</button>
-//             <a href='#'>
-//               <small>Forgot password</small>
-//             </a>
-//           </div>
-//         </form>
-//       </div>
-//       ;
-//     </>
-//   );
-// };
+const SignUpForm = () => {
+  return (
+    <>
+      <div>
+        <form>
+          <label htmlFor='name'>
+            <span>Name</span>
+            <input id='name' type='text' placeholder='Name' />
+          </label>
+          <label htmlFor='email'>
+            <span>Email</span>
+            <input id='email' type='text' placeholder='Email' />
+          </label>
+          <label htmlFor='password'>
+            <span>Password</span>
+            <input id='password' type='password' placeholder='Password' />
+          </label>
+          <div>
+            <button type='button'>Sign Up</button>
+          </div>
+        </form>
+      </div>
+      ;
+    </>
+  );
+};
 
-// export default SignInForm;
+export default SignUpForm;
