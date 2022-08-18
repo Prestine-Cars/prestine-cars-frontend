@@ -5,6 +5,9 @@ const actions = {
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   LOGIN_FAILURE: 'LOGIN_FAILURE',
   LOGIN_REQUEST: 'LOGIN_REQUEST',
+  SIGNIN_REQUEST: 'SIGNIN_REQUEST',
+  SIGNIN_SUCCESS: 'SIGNIN_SUCCESS',
+  SIGNIN_FAILURE: 'SIGNIN_FAILURE',
 };
 
 export const login = (userData, location) => (dispatch) => {
@@ -30,3 +33,23 @@ export const login = (userData, location) => (dispatch) => {
       });
     });
 };
+
+export const signup = (userData, location) => (dispatch) => {
+  dispatch({
+    type: actions.SIGNIN_REQUEST,
+  });
+  API.signup(userData)
+    .then((response) => {
+      dispatch({
+        type: actions.SIGNIN_SUCCESS,
+        payload: response.data,
+      });
+      location('/signin');
+    })
+    .catch((error) => {
+      dispatch({
+        type: actions.SIGNIN_FAILURE,
+        payload: error,
+      });
+    });
+}
