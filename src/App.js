@@ -1,29 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+/*eslint-disable */
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SignInPage from './pages/SignInPage';
+import SignUpPage from './pages/SignUpPage';
+import CitiesPage from './pages/CitiesPage';
+
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path='/signin' element={<SignInPage />} />
+      <Route path='/signup' element={<SignUpPage />} />
+      <Route path='/cities' element={<CitiesPage />} />
+    </Routes>
+  </BrowserRouter>
+);
 
 export default App;
