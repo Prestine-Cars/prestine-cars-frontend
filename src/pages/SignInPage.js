@@ -1,15 +1,12 @@
-/*eslint-disable */
 import React from 'react';
-import SignInForm from '../components/SignInForm';
+import Login from '../components/Login';
 
-const SignInPage = () => {
-  return (
-    <>
-      <section>
-        <SignInForm />
-      </section>
-    </>
-  );
-};
+const SignInPage = () => (
+  <>
+    <section>
+      <Login />
+    </section>
+  </>
+);
 
 export default SignInPage;
