@@ -1,3 +1,4 @@
+/* eslint-disable*/
 const actions = {
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   LOGIN_REQUEST: 'LOGIN_REQUEST',

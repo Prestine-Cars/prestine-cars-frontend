@@ -1,0 +1,38 @@
+body {
+  background-color: #98be20;
+  color: white;
+}
+
+.main-container {
+  text-align: center;
+  height: 100vh;
+  padding-top: 100px;
+}
+
+.content-container {
+  padding-top: 150px;
+  max-width: 1024px;
+  margin-left: 250px;
+}
+
+p {
+  font-weight: 100;
+  font-style: italic;
+  font-size: 24px;
+}
+
+.button {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  border-color: white;
+  background-color: transparent;
+  color: white;
+  font-size: 24px;
+  width: 300px;
+}
+
+.date {
+  position: absolute;
+  bottom: -60px;
+}

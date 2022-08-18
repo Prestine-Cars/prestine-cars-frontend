@@ -1,3 +1,4 @@
+/* eslint-disable*/
 /* eslint-disable import/prefer-default-export */
 import * as API from '../services';
 
