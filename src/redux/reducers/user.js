@@ -9,11 +9,13 @@ const initialState = user
   ? {
     isLoggedIn: true,
     user,
+    loginLoader: false,
     errorLogin: null,
   }
   : {
     isLoggedIn: false,
     user: null,
+    loginLoader: false,
     errorLogin: null,
   };
 
@@ -22,19 +24,19 @@ const reducer = (state = initialState, action) => {
     case actions.LOGIN_SUCCESS:
       return {
         ...state,
-        isLoggedIn: true,
         user: action.payload,
       };
     case actions.LOGIN_REQUEST:
       return {
         ...state,
+        loginLoader: true,
       };
     case actions.LOGIN_FAILURE:
       return {
         ...state,
-        isLoggedIn: false,
         user: null,
         errorLogin: action.payload,
+        loginLoader: false,
       };
     default:
       return state;
