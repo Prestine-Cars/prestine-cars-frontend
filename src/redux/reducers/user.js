@@ -2,6 +2,9 @@ const actions = {
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   LOGIN_REQUEST: 'LOGIN_REQUEST',
   LOGIN_FAILURE: 'LOGIN_FAILURE',
+  SIGNUP_REQUEST: 'SIGNUP_REQUEST',
+  SIGNUP_SUCCESS: 'SIGNUP_SUCCESS',
+  SIGNUP_FAILURE: 'SIGNUP_FAILURE',
 };
 
 const user = localStorage.getItem('user');
@@ -9,14 +12,16 @@ const initialState = user
   ? {
     isLoggedIn: true,
     user,
-    loginLoader: false,
+    Loader: false,
     loginError: null,
+    signupError: null,
   }
   : {
     isLoggedIn: false,
     user: null,
-    loginLoader: false,
+    Loader: false,
     loginError: null,
+    signupError: null,
   };
 
 const reducer = (state = initialState, action) => {
@@ -29,14 +34,30 @@ const reducer = (state = initialState, action) => {
     case actions.LOGIN_REQUEST:
       return {
         ...state,
-        loginLoader: true,
+        Loader: true,
       };
     case actions.LOGIN_FAILURE:
       return {
         ...state,
-        user: null,
         loginError: action.payload,
-        loginLoader: false,
+        Loader: false,
+      };
+    case actions.SIGNUP_SUCCESS:
+      return {
+        ...state,
+        user: action.payload,
+        Loader: false,
+      };
+    case actions.SIGNUP_REQUEST:
+      return {
+        ...state,
+        Loader: true,
+      };
+    case actions.SIGNUP_FAILURE:
+      return {
+        ...state,
+        signupError: action.payload,
+        Loader: false,
       };
     default:
       return state;

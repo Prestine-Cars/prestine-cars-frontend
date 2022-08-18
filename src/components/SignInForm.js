@@ -6,7 +6,7 @@ import { TailSpin } from 'react-loader-spinner';
 import { login } from '../redux/actions/user';
 
 const SignInForm = () => {
-  const { loginLoader = false, loginError = null } = useSelector(
+  const { Loader = false, loginError = null } = useSelector(
     (state) => state.user,
   );
   const [userLogin, setLogin] = useState({
@@ -32,41 +32,41 @@ const SignInForm = () => {
       <div>
         <h1>Login</h1>
         <form onSubmit={handleLogin}>
-          {loginLoader && (
+          {Loader && (
             <div>
               <TailSpin
-                height='80'
-                width='80'
-                radius='3'
-                color='#98be20'
-                ariaLabel='tail-spin'
+                height="80"
+                width="80"
+                radius="3"
+                color="#98be20"
+                ariaLabel="tail-spin"
                 wrapperStyle
                 wrapperClass
               />
             </div>
           )}
           {loginError && <p>You have entered an invalid email/password</p>}
-          <label htmlFor='email'>
+          <label htmlFor="email">
             <span>Email</span>
             <input
               onChange={handleOnChange}
-              type='email'
-              name='email'
-              placeholder='Email'
+              type="email"
+              name="email"
+              placeholder="Email"
               required
             />
           </label>
-          <label htmlFor='name'>
+          <label htmlFor="name">
             <span>Name</span>
             <input
               onChange={handleOnChange}
-              type='password'
-              name='password'
-              placeholder='Password'
+              type="password"
+              name="password"
+              placeholder="Password"
               required
             />
           </label>
-          <input type='submit' value='Login' />
+          <input type="submit" value="Login" />
         </form>
       </div>
     </>

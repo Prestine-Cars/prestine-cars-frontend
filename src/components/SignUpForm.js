@@ -1,13 +1,13 @@
 // @ts-nocheck
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { TailSpin } from 'react-loader-spinner';
 import { signup } from '../redux/actions/user';
 
 const SignUpForm = () => {
-  const { loginLoader = false, signupError = null } = useSelector(
-    (state) => state.user
+  const { Loader = false, signupError = null } = useSelector(
+    (state) => state.user,
   );
   const [userSignup, setSignup] = useState({
     name: '',
@@ -33,50 +33,50 @@ const SignUpForm = () => {
       <div>
         <h1>Sign Up</h1>
         <form onSubmit={handleSignup}>
-          {loginLoader && (
+          {Loader && (
             <div>
               <TailSpin
-                height='80'
-                width='80'
-                radius='3'
-                color='#98be20'
-                ariaLabel='tail-spin'
+                height="80"
+                width="80"
+                radius="3"
+                color="#98be20"
+                ariaLabel="tail-spin"
               />
             </div>
           )}
           {signupError && <p>Name/Email already exists </p>}
-          <label htmlFor='name'>
+          <label htmlFor="name">
             <span>Name</span>
             <input
               onChange={handleOnChange}
-              type='text'
-              name='name'
-              placeholder='Name'
+              type="text"
+              name="name"
+              placeholder="Name"
               required
             />
           </label>
-          <label htmlFor='email'>
+          <label htmlFor="email">
             <span>Email</span>
             <input
               onChange={handleOnChange}
-              type='email'
-              name='email'
-              placeholder='Email'
+              type="email"
+              name="email"
+              placeholder="Email"
               required
             />
           </label>
-          <label htmlFor='password'>
+          <label htmlFor="password">
             <span>Password</span>
             <input
               onChange={handleOnChange}
-              type='password'
-              name='password'
-              placeholder='Password'
+              type="password"
+              name="password"
+              placeholder="Password"
               required
             />
           </label>
           <div>
-            <input type='submit' value='Sign Up' />
+            <input type="submit" value="Sign Up" />
           </div>
         </form>
       </div>

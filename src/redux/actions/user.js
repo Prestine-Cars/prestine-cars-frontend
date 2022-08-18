@@ -5,9 +5,9 @@ const actions = {
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   LOGIN_FAILURE: 'LOGIN_FAILURE',
   LOGIN_REQUEST: 'LOGIN_REQUEST',
-  SIGNIN_REQUEST: 'SIGNIN_REQUEST',
-  SIGNIN_SUCCESS: 'SIGNIN_SUCCESS',
-  SIGNIN_FAILURE: 'SIGNIN_FAILURE',
+  SIGNUP_REQUEST: 'SIGNUP_REQUEST',
+  SIGNUP_SUCCESS: 'SIGNUP_SUCCESS',
+  SIGNUP_FAILURE: 'SIGNUP_FAILURE',
 };
 
 export const login = (userData, location) => (dispatch) => {
@@ -36,20 +36,20 @@ export const login = (userData, location) => (dispatch) => {
 
 export const signup = (userData, location) => (dispatch) => {
   dispatch({
-    type: actions.SIGNIN_REQUEST,
+    type: actions.SIGNUP_REQUEST,
   });
   API.signup(userData)
     .then((response) => {
       dispatch({
-        type: actions.SIGNIN_SUCCESS,
+        type: actions.SIGNUP_SUCCESS,
         payload: response.data,
       });
       location('/signin');
     })
     .catch((error) => {
       dispatch({
-        type: actions.SIGNIN_FAILURE,
+        type: actions.SIGNUP_FAILURE,
         payload: error,
       });
     });
-}
+};
