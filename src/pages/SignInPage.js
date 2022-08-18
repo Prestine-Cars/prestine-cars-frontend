@@ -1,10 +1,10 @@
 import React from 'react';
-import Login from '../components/Login';
+import SignInForm from '../components/SignInForm';
 
 const SignInPage = () => (
   <>
     <section>
-      <Login />
+      <SignInForm />
     </section>
   </>
 );
