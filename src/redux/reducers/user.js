@@ -10,13 +10,13 @@ const initialState = user
     isLoggedIn: true,
     user,
     loginLoader: false,
-    errorLogin: null,
+    loginError: null,
   }
   : {
     isLoggedIn: false,
     user: null,
     loginLoader: false,
-    errorLogin: null,
+    loginError: null,
   };
 
 const reducer = (state = initialState, action) => {
@@ -35,7 +35,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         user: null,
-        errorLogin: action.payload,
+        loginError: action.payload,
         loginLoader: false,
       };
     default:

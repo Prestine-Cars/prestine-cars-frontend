@@ -6,7 +6,7 @@ import { TailSpin } from 'react-loader-spinner';
 import { login } from '../redux/actions/user';
 
 const SignInForm = () => {
-  const { loginLoader = false, errorLogin = null } = useSelector(
+  const { loginLoader = false, loginError = null } = useSelector(
     (state) => state.user,
   );
   const [userLogin, setLogin] = useState({
@@ -35,33 +35,38 @@ const SignInForm = () => {
           {loginLoader && (
             <div>
               <TailSpin
-                height="80"
-                width="80"
-                radius="3"
-                color="#98be20"
-                ariaLabel="tail-spin"
+                height='80'
+                width='80'
+                radius='3'
+                color='#98be20'
+                ariaLabel='tail-spin'
                 wrapperStyle
                 wrapperClass
               />
             </div>
           )}
-          {errorLogin && <p>You have entered an invalid email/password</p>}
-          <input
-            onChange={handleOnChange}
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-          />
-          <input
-            onChange={handleOnChange}
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-          />
-          <small>{}</small>
-          <input type="submit" value="Login" />
+          {loginError && <p>You have entered an invalid email/password</p>}
+          <label htmlFor='email'>
+            <span>Email</span>
+            <input
+              onChange={handleOnChange}
+              type='email'
+              name='email'
+              placeholder='Email'
+              required
+            />
+          </label>
+          <label htmlFor='name'>
+            <span>Name</span>
+            <input
+              onChange={handleOnChange}
+              type='password'
+              name='password'
+              placeholder='Password'
+              required
+            />
+          </label>
+          <input type='submit' value='Login' />
         </form>
       </div>
     </>
