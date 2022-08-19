@@ -1,0 +1,8 @@
+.rounded {
+  border-radius: 10px;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
