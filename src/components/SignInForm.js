@@ -29,7 +29,7 @@ const SignInForm = () => {
   };
   return (
     <>
-      <div>
+      <section className="vh-100 gradient-custom">
         <h1>Login</h1>
         <form onSubmit={handleLogin}>
           {Loader && (
@@ -68,7 +68,7 @@ const SignInForm = () => {
           </label>
           <input type="submit" value="Login" />
         </form>
-      </div>
+      </section>
     </>
   );
 };

@@ -5,13 +5,15 @@ import SignUpPage from './pages/SignUpPage';
 import CitiesPage from './pages/CitiesPage';
 
 const App = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/signin" element={<SignInPage />} />
-      <Route path="/signup" element={<SignUpPage />} />
-      <Route path="/cities" element={<CitiesPage />} />
-    </Routes>
-  </BrowserRouter>
+  <section className="vh-100 gradient-custom">
+    <BrowserRouter>
+      <Routes>
+        <Route path="/signin" element={<SignInPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/cities" element={<CitiesPage />} />
+      </Routes>
+    </BrowserRouter>
+  </section>
 );
 
 export default App;
