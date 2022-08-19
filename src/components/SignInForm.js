@@ -35,7 +35,7 @@ const SignInForm = () => {
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">
             <div className={`card shadow-5-strong ${classes.sign_up_card}`}>
               <div className="card-body p-5 text-center">
-                <div className="mb-md-5 mt-md-4 pb-5">
+                <div className="mb-md-2 mt-md-2 pb-5">
                   <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
                   <p className="text-black-50 mb-5">
                     Please enter your login and password!
@@ -84,13 +84,13 @@ const SignInForm = () => {
                         />
                       </label>
                     </div>
-                    <p className="small mb-5 pb-lg-2">
+                    <p className="small mb-3 pb-lg-2">
                       <a className={`${classes.green_link}`} href="#!">
                         Forgot password?
                       </a>
                     </p>
                     <button
-                      className={`btn text-white btn-block mb-4 ${classes.green_btn}`}
+                      className={`btn text-white btn-block mb-2 ${classes.green_btn}`}
                       type="submit"
                     >
                       Login
