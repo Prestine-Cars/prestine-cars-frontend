@@ -1,9 +1,10 @@
 // @ts-nocheck
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { TailSpin } from 'react-loader-spinner';
 import { signup } from '../redux/actions/user';
+import classes from './modules/SignInForm.module.css';
 
 const SignUpForm = () => {
   const { Loader = false, signupError = null } = useSelector(
@@ -30,9 +31,8 @@ const SignUpForm = () => {
   };
   return (
     <>
-      <div>
-        <h1>Sign Up</h1>
-        <form onSubmit={handleSignup}>
+      <form onSubmit={handleSignup}>
+        <div className={`${classes.loader}`}>
           {Loader && (
             <div>
               <TailSpin
@@ -41,45 +41,61 @@ const SignUpForm = () => {
                 radius="3"
                 color="#98be20"
                 ariaLabel="tail-spin"
+                wrapperStyle
+                wrapperClass
               />
             </div>
           )}
-          {signupError && <p>Name/Email already exists </p>}
-          <label htmlFor="name">
-            <span>Name</span>
+        </div>
+        {signupError && <p>Name/Email already exists </p>}
+
+        <div className="form-outline mb-4">
+          <label htmlFor="name" className="form-label">
             <input
               onChange={handleOnChange}
               type="text"
               name="name"
-              placeholder="Name"
+              placeholder="name"
               required
+              className="form-control"
             />
           </label>
-          <label htmlFor="email">
-            <span>Email</span>
+        </div>
+        <div className="form-outline mb-4">
+          <label htmlFor="email" className="form-label">
             <input
               onChange={handleOnChange}
               type="email"
               name="email"
               placeholder="Email"
               required
+              className="form-control"
             />
           </label>
-          <label htmlFor="password">
-            <span>Password</span>
+        </div>
+        <div className="form-outline mb-4">
+          <label htmlFor="password" className="form-label">
             <input
               onChange={handleOnChange}
               type="password"
               name="password"
               placeholder="Password"
               required
+              className="form-control"
             />
           </label>
-          <div>
-            <input type="submit" value="Sign Up" />
-          </div>
-        </form>
-      </div>
+        </div>
+        <button type="submit" className={`btn text-white btn-block mb-4 ${classes.green_btn}`}>
+          Sign up
+        </button>
+        <div>
+          <p className="mb-0">
+            Already have an account?
+            {' '}
+            <NavLink className={`fw-bold ${classes.green_link}`} to="/signin">Login</NavLink>
+          </p>
+        </div>
+      </form>
     </>
   );
 };

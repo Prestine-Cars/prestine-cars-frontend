@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { TailSpin } from 'react-loader-spinner';
 import { login } from '../redux/actions/user';
 import classes from './modules/SignInForm.module.css';
@@ -33,11 +33,11 @@ const SignInForm = () => {
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-            <div className={`card bg-dark text-white ${classes.rounded}`}>
+            <div className={`card shadow-5-strong ${classes.sign_up_card}`}>
               <div className="card-body p-5 text-center">
                 <div className="mb-md-5 mt-md-4 pb-5">
                   <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
-                  <p className="text-white-50 mb-5">
+                  <p className="text-black-50 mb-5">
                     Please enter your login and password!
                   </p>
                   <form onSubmit={handleLogin}>
@@ -85,12 +85,12 @@ const SignInForm = () => {
                       </label>
                     </div>
                     <p className="small mb-5 pb-lg-2">
-                      <a className="text-white-50" href="#!">
+                      <a className={`${classes.green_link}`} href="#!">
                         Forgot password?
                       </a>
                     </p>
                     <button
-                      className="btn btn-outline-light btn-lg px-5"
+                      className={`btn text-white btn-block mb-4 ${classes.green_btn}`}
                       type="submit"
                     >
                       Login
@@ -102,9 +102,7 @@ const SignInForm = () => {
                   <p className="mb-0">
                     Dont have an account?
                     {' '}
-                    <a href="#!" className="text-white-50 fw-bold">
-                      Sign Up
-                    </a>
+                    <NavLink className={`fw-bold ${classes.green_link}`} to="/signup">Sign Up</NavLink>
                   </p>
                 </div>
               </div>
