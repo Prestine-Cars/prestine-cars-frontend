@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { TailSpin } from 'react-loader-spinner';
 import { login } from '../redux/actions/user';
 import classes from './modules/SignInForm.module.css';
+import logoImg from '../assets/logo.png';
 
 const SignInForm = () => {
   const { Loader = false, loginError = null } = useSelector(
@@ -30,7 +31,10 @@ const SignInForm = () => {
   };
   return (
     <>
-      <div className="container py-5 h-100">
+      <div className={classes['logo-image']}>
+        <img src={logoImg} className={classes.logo} alt="Logo" />
+      </div>
+      <div className="container pt-4 mt-4">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">
             <div className={`card shadow-5-strong ${classes.sign_up_card}`}>

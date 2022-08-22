@@ -23,3 +23,22 @@
   color: rgb(151, 191, 15) !important;
   text-decoration: none;
 }
+
+.logo-image {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.logo {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  padding-top: 2em;
+}
+
+@media screen and (min-width: 800px) {
+.logo-image {
+  width: 15vw;
+  margin: 0 auto;
+}
+}
