@@ -43,8 +43,8 @@ export default function Sidebar() {
           <li className="flex flex-col">
             {[
               ['CITIES', '/cities'],
-              ['ADD CITY', '/add_city'],
               ['RESERVATIONS', '/reservations'],
+              ['ADD CITY', '/add_city'],
               ['DELETE CITY', '/delete_city'],
             ].map(([title, url]) => (
               <NavLink
