@@ -58,7 +58,9 @@ export default function Sidebar() {
         } flex-col w-full sm:w-1/5 h-screen bg-white sm:border-r-2 pt-7 sm:pt-0 sm:fixed`}
       >
         <NavLink className="hidden sm:flex" to="/cities">
-          <img src={logo} alt="logo" width={200} />
+          <section className="hero container max-w-screen-lg mx-auto flex justify-center pb-3">
+            <img src={logo} alt="logo" width={200} className="object-cover object-center" />
+          </section>
         </NavLink>
         <ul className="sm:ml-2 pt-2 pb-3 pl-0 mt-6 text-center">
           {user && (
