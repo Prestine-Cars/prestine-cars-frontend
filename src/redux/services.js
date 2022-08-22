@@ -24,10 +24,10 @@ export const signup = async (user) => {
   return response;
 };
 
-const authHeader = () => {
+export const authHeader = () => {
   const token = localStorage.getItem('token');
   if (token) {
     return token;
   }
-  return {};
+  return false;
 };
