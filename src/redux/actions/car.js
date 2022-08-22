@@ -1,32 +1,30 @@
+import * as API from '../services';
+
 const actionTypes = {
-    FETCH_CAR_SUCCESS: 'FETCH_CAR_SUCCESS',
-    FETCH_CAR_FAILURE: 'FETCH_CAR_FAILURE',
-}
+  CREATE_CAR_SUCCESS: 'CREATE_CAR_SUCCESS',
+  CREATE_CAR_FAILURE: 'CREATE_CAR_FAILURE',
+};
 
-const initialState = {
-    car : [],
-    loading: false,
-    error: null,
-}
+const newCar = (car, navigate) => (dispatch) => {
+  API.createCar(car)
+    .then((bike) => {
+      dispatch(
+        {
+          type: actionTypes.CREATE_CAR_SUCCESS,
+          payload: bike,
+        },
+      );
+      navigate('/cities'); // to be updated with the concerned city
+    })
+    .catch((error) => {
+      dispatch(
+        {
+          type: actionTypes.CREATE_CAR_FAILURE,
+          payload: error,
 
-const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case actionTypes.FETCH_CAR_SUCCESS:
-            return {
-                ...state,
-                car: action.payload,
-                loading: false,
-                error: null,
-            }
-        case actionTypes.FETCH_CAR_FAILURE:
-            return {
-                ...state,
-                loading: false,
-                error: action.payload,
-            }
-        default:
-            return state;
-    }
-}
+        },
+      );
+    });
+};
 
-export default reducer;
+export default newCar;
