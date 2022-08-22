@@ -10,7 +10,7 @@ const actions = {
   LOGOUT_FAILURE: 'LOGOUT_FAILURE',
 };
 
-const user = localStorage.getItem('user');
+const user = localStorage.getItem('token');
 const initialState = user
   ? {
     isLoggedIn: true,

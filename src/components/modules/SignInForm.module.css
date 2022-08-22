@@ -37,8 +37,8 @@
 }
 
 @media screen and (min-width: 800px) {
-.logo-image {
-  width: 15vw;
-  margin: 0 auto;
-}
+  .logo-image {
+    width: 15vw;
+    margin: 0 auto;
+  }
 }
