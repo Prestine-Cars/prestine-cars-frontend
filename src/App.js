@@ -4,13 +4,11 @@ import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SignUpPage';
 import CitiesPage from './pages/CitiesPage';
 import Sidebar from './components/Sidebar';
-import { authHeader } from './redux/services';
 
 const App = () => (
   <>
     <BrowserRouter>
-      {authHeader && (<Sidebar />)}
-      {/* {authHeader() ? <Sidebar /> : null} */}
+      <Sidebar />
       <div className="flex-1">
         <Routes>
           <Route path="/signin" element={<SignInPage />} />
