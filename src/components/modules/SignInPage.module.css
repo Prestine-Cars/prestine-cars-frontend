@@ -1,7 +1,6 @@
 .sign_in {
   height: 100vh;
-
-  /* fallback for old browsers */
+  min-width: 100%;
   background: rgb(151, 191, 15);
   background: linear-gradient(180deg, rgba(151, 191, 15, 1) 0%, rgba(91, 190, 57, 1) 49%, rgba(22, 74, 4, 1) 100%);
 }

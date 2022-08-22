@@ -16,15 +16,13 @@ const initialState = user
     isLoggedIn: true,
     user,
     Loader: false,
-    loginError: null,
-    signupError: null,
+    formError: null,
   }
   : {
     isLoggedIn: false,
     user: null,
     Loader: false,
-    loginError: null,
-    signupError: null,
+    formError: null,
   };
 
 const reducer = (state = initialState, action) => {
@@ -33,6 +31,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         user: action.payload,
+        formError: null,
       };
     case actions.LOGIN_REQUEST:
       return {
@@ -42,7 +41,7 @@ const reducer = (state = initialState, action) => {
     case actions.LOGIN_FAILURE:
       return {
         ...state,
-        loginError: action.payload,
+        formError: action.payload,
         Loader: false,
       };
     case actions.SIGNUP_SUCCESS:
@@ -50,6 +49,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         user: action.payload,
         Loader: false,
+        formError: null,
       };
     case actions.SIGNUP_REQUEST:
       return {
@@ -59,7 +59,7 @@ const reducer = (state = initialState, action) => {
     case actions.SIGNUP_FAILURE:
       return {
         ...state,
-        signupError: action.payload,
+        formError: action.payload,
         Loader: false,
       };
     case actions.LOGOUT_REQUEST:
@@ -72,6 +72,7 @@ const reducer = (state = initialState, action) => {
         isLoggedIn: false,
         user: null,
         Loader: false,
+        formError: null,
       };
     case actions.LOGOUT_FAILURE:
       return {
