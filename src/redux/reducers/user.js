@@ -1,10 +1,13 @@
 const actions = {
-  LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   LOGIN_REQUEST: 'LOGIN_REQUEST',
+  LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   LOGIN_FAILURE: 'LOGIN_FAILURE',
   SIGNUP_REQUEST: 'SIGNUP_REQUEST',
   SIGNUP_SUCCESS: 'SIGNUP_SUCCESS',
   SIGNUP_FAILURE: 'SIGNUP_FAILURE',
+  LOGOUT_REQUEST: 'LOGOUT_REQUEST',
+  LOGOUT_SUCCESS: 'LOGOUT_SUCCESS',
+  LOGOUT_FAILURE: 'LOGOUT_FAILURE',
 };
 
 const user = localStorage.getItem('user');
@@ -58,6 +61,21 @@ const reducer = (state = initialState, action) => {
         ...state,
         signupError: action.payload,
         Loader: false,
+      };
+    case actions.LOGOUT_REQUEST:
+      return {
+        ...state,
+      };
+    case actions.LOGOUT_SUCCESS:
+      return {
+        ...state,
+        isLoggedIn: false,
+        user: null,
+      };
+    case actions.LOGOUT_FAILURE:
+      return {
+        ...state,
+        user: action.payload,
       };
     default:
       return state;
