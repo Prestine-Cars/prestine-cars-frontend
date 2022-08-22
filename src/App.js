@@ -4,6 +4,7 @@ import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SignUpPage';
 import CitiesPage from './pages/CitiesPage';
 import AddCarPage from './pages/AddCarPage';
+
 const App = () => (
   <BrowserRouter>
     <Routes>
