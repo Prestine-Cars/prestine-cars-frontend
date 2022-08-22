@@ -59,7 +59,7 @@ export default function Sidebar() {
             ))}
             <NavLink
               to="/"
-              onClick={console.log('logout')}
+              onClick="logout" // to be updated
               className="text-sm sm:text-left font-semibold px-3 py-2 hover:bg-primary-300 hover:text-white w-full no-underline text-gray-600 font-body"
             >
               LOGOUT
