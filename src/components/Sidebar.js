@@ -42,9 +42,8 @@ export default function Sidebar() {
         <ul className="sm:ml-2 pt-2 pb-3 pl-0 mt-6 text-center">
           <li className="flex flex-col">
             {[
-              ['CITIES', '/'],
-              ['ADD CITY', '/add_house'],
-              ['ADD CAR', '/add_car'],
+              ['CITIES', '/cities'],
+              ['ADD CITY', '/add_city'],
               ['RESERVATIONS', '/reservations'],
               ['DELETE CITY', '/delete_city'],
             ].map(([title, url]) => (
