@@ -52,7 +52,7 @@ export default function Sidebar() {
                 to={url}
                 key={title}
                 onClick={showPage}
-                className={({ isActive }) => (isActive ? 'bg-primary-300 text-white text-sm sm:text-left font-semibold px-3 py-2 hover:bg-primary-200 w-full hover:text-white font-body' : 'text-sm sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 w-full hover:text-white no-underline text-gray-600 font-body')}
+                className={({ isActive }) => (isActive ? 'bg-primary-300 text-white text-sm sm:text-left font-semibold px-3 py-2 hover:bg-primary-100 w-full hover:text-white font-body' : 'text-sm sm:text-left font-semibold px-3 py-2 hover:bg-primary-300 w-full hover:text-white no-underline text-gray-600 font-body')}
               >
                 {title}
               </NavLink>
@@ -60,7 +60,7 @@ export default function Sidebar() {
             <NavLink
               to="/"
               onClick={console.log('logout')}
-              className="text-sm sm:text-left font-semibold px-3 py-2 hover:bg-lime-500 hover:text-white w-full no-underline text-gray-600 font-body"
+              className="text-sm sm:text-left font-semibold px-3 py-2 hover:bg-primary-300 hover:text-white w-full no-underline text-gray-600 font-body"
             >
               LOGOUT
             </NavLink>
