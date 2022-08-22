@@ -29,5 +29,5 @@ export const authHeader = () => {
   if (token) {
     return token;
   }
-  return {};
+  return false;
 };
