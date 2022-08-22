@@ -71,6 +71,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         isLoggedIn: false,
         user: null,
+        Loader: false,
       };
     case actions.LOGOUT_FAILURE:
       return {
