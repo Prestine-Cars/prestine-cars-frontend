@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  height: 100%;
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -24,4 +25,8 @@ code {
     Consolas,
     'Courier New',
     monospace;
+}
+
+.root-container {
+  height: 100%;
 }
