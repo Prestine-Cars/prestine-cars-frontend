@@ -19,15 +19,19 @@ const CityDetailsPage = () => {
         <span className="spinner-border text-primary" />
         <p>Loading...</p>
       </div>
-    )) ||
-    (error && (
+    ))
+    || (error && (
       <div className="alert alert-danger" role="alert">
         {city.error}
       </div>
     )) || (
       <div className="">
         <div className="text-center">
-          <h2>{cityData.name} Details</h2>
+          <h2>
+            {cityData.name}
+            {' '}
+            Details
+          </h2>
           <p>{cityData.description}</p>
         </div>
         <div className="">
