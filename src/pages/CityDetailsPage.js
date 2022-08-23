@@ -1,7 +1,9 @@
+// @ts-nocheck
 import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCity } from '../redux/reducers/city';
+import classes from '../components/modules/CityDetail.module.css';
 
 const CityDetailsPage = () => {
   const { id } = useParams();
@@ -16,8 +18,10 @@ const CityDetailsPage = () => {
   return (
     (loading && (
       <div className="d-flex flex-column justify-content-center align-items-center vh-100">
-        <span className="spinner-border text-primary" />
-        <p>Loading...</p>
+        <span
+          className={`spinner-border ${classes.green}`}
+        />
+        <p>Loading the city ...</p>
       </div>
     ))
     || (error && (
@@ -37,7 +41,7 @@ const CityDetailsPage = () => {
         <div className="">
           {cityData.cars.map((car) => (
             <div key={car.id} className="card">
-              <img src="..." className="card-img-top" alt="..." />
+              <img src={car.photo} className="card-img-top" alt={car.name} />
               <div className="card-body">
                 <h5 className="card-title">{car.name}</h5>
                 <h5 className="card-title">{car.price}</h5>

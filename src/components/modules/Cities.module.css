@@ -1,0 +1,13 @@
+.green {
+   color: rgb(151, 191, 15) !important;
+}
+
+.img {
+  max-width: 18rem;
+}
+
+@media screen and (min-width: 800px) {
+  .img_wrap {
+  max-width: 30% !important;
+}
+}

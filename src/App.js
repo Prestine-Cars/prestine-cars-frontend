@@ -11,7 +11,7 @@ const App = () => (
   <>
     <BrowserRouter>
       <Sidebar />
-      <div className="flex-1">
+      <div>
         <Routes>
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
