@@ -39,7 +39,7 @@ const CarForm = () => {
           placeholder="Model Car"
           value={car.model}
           onChange={handleChange}
-          minLength="3" 
+          minLength="3"
           maxLength="50"
           required
         />
