@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useNavigate, Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCity } from '../redux/reducers/city';
 
 const CityDetailsPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const city = useSelector((state) => state.city);
   const { loading, error, city: cityData } = city;
   const dispatch = useDispatch();
@@ -12,6 +13,10 @@ const CityDetailsPage = () => {
   useEffect(() => {
     dispatch(getCity(id));
   }, [id]);
+
+  const getCityId = (id, navigate) => {
+    navigate(`/cities/${id}/cars`);
+  };
 
   return (
     (loading && (
@@ -33,6 +38,13 @@ const CityDetailsPage = () => {
             Details
           </h2>
           <p>{cityData.description}</p>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => getCityId(id, navigate)}
+          >
+            Add car
+          </button>
         </div>
         <div className="">
           {cityData.cars.map((car) => (
