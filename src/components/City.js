@@ -8,6 +8,10 @@ const City = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  function handleAddCar() {
+    navigate('/add_car');
+  }
+
   function handleLogout() {
     dispatch(logout(navigate));
   }
@@ -17,6 +21,8 @@ const City = () => {
         <h1>I am a city</h1>
       </div>
       <button type="button" onClick={handleLogout}>Logout</button>
+      <button type="button" onClick={handleAddCar}>Add car</button>
+
     </>
   );
 };
