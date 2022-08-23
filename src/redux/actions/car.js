@@ -8,22 +8,17 @@ const actionTypes = {
 const newCar = (car, navigate) => (dispatch) => {
   API.createCar(car)
     .then((bike) => {
-      dispatch(
-        {
-          type: actionTypes.CREATE_CAR_SUCCESS,
-          payload: bike,
-        },
-      );
-      navigate('/cities'); // to be updated with the concerned city
+      dispatch({
+        type: actionTypes.CREATE_CAR_SUCCESS,
+        payload: bike,
+      });
+      navigate(`/cities/${car.city}`); // to be updated with the concerned city
     })
     .catch((error) => {
-      dispatch(
-        {
-          type: actionTypes.CREATE_CAR_FAILURE,
-          payload: error,
-
-        },
-      );
+      dispatch({
+        type: actionTypes.CREATE_CAR_FAILURE,
+        payload: error,
+      });
     });
 };
 
