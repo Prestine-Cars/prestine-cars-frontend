@@ -18,9 +18,7 @@ const CityDetailsPage = () => {
   return (
     (loading && (
       <div className="d-flex flex-column justify-content-center align-items-center vh-100">
-        <span
-          className={`spinner-border ${classes.green}`}
-        />
+        <span className={`spinner-border ${classes.green}`} />
         <p>Loading the city ...</p>
       </div>
     ))
@@ -29,7 +27,12 @@ const CityDetailsPage = () => {
         {city.error}
       </div>
     )) || (
-      <div className="">
+      <section className="container">
+        <div className={`${classes.test_container}`}>
+          <div className={` d-flex justify-content-center align-items-center ${classes.test_container}`}>
+            <p className={`${classes.hero_text}`}>{cityData.name}</p>
+          </div>
+        </div>
         <div className="text-center">
           <h2>
             {cityData.name}
@@ -53,7 +56,7 @@ const CityDetailsPage = () => {
             </div>
           ))}
         </div>
-      </div>
+      </section>
     )
   );
 };
