@@ -30,22 +30,24 @@ const CarForm = () => {
 
   return (
     <div>
-      <h1>I am a car form</h1>
+      <h1>Add Car for this city</h1>
       <form>
         <input
           type="text"
           id="model"
           name="model"
-          placeholder="model"
+          placeholder="Model Car"
           value={car.model}
           onChange={handleChange}
+          minLength="3" 
+          maxLength="50"
           required
         />
 
         <input
-          type="text"
+          type="url"
           id="photo"
-          name="photo"
+          name="Photo of Car"
           placeholder="photo"
           value={car.photo}
           onChange={handleChange}
@@ -56,16 +58,16 @@ const CarForm = () => {
           type="text"
           id="description"
           name="description"
-          placeholder="description"
+          placeholder="Description"
           value={car.description}
           onChange={handleChange}
         />
 
         <input
-          type="integer"
+          type="number"
           id="cost"
           name="cost"
-          placeholder="cost"
+          placeholder="Cost"
           value={car.cost}
           onChange={handleChange}
           required
