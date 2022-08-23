@@ -32,7 +32,6 @@ export const authHeader = () => {
   return false;
 };
 
-// const { user } = authHeader();
 export const createCar = async (car) => {
   const headers = {
     'Content-Type': 'application/json',
@@ -44,11 +43,8 @@ export const createCar = async (car) => {
       photo: car.photo,
       description: car.description,
       cost: car.cost,
-      // city: car.city,
-      // user_id: user.id, // getting the current user id
     },
     { headers });
-    
-  return {...response.data};
-  // console.log(authHeader());
+
+  return { ...response.data };
 };
