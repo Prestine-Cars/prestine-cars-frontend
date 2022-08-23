@@ -1,5 +1,4 @@
 // @ts-nocheck
-/* eslint-disable */
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -17,27 +16,30 @@ const Cities = () => {
 
   return (
     <>
-      <div className='text-center m-4 p-4'>
-        <h2 className='text-center m-2 p-2'>These are the available Cities</h2>
-        <h3 className='text-center mt-2'>
-          Choose a city to see available cars and reserve a car
+      <div className="text-center m-4 p-4">
+        <h2 className="text-center m-2 p-2">These are the available Cities</h2>
+        <h3 className="text-center mt-2">
+          Choose a country flag to see available cars
         </h3>
       </div>
       {loading && (
-        <div className='d-flex flex-column justify-content-center align-items-center vh-100'>
+        <div className="d-flex flex-column justify-content-center align-items-center vh-100">
           <span className={`spinner-border ${classes.green}`} />
           <p>Loading the cities...</p>
         </div>
-      )}{' '}
+      )}
+      {' '}
       {error && (
-        <div className='alert alert-danger' role='alert'>
+        <div className="alert alert-danger" role="alert">
           {error}
         </div>
-      )}{' '}
-      <div class='container'>
-        <div class='row'>
+      )}
+      {' '}
+      <div className="container">
+        <div className="row">
           {citiesData.map((city) => (
             <div
+              key={city.id}
               className={`col-md-6 m-2 d-flex justify-content-center align-items-center flex-column ${classes.img_wrap}`}
             >
               <Link to={`/cities/${city.id}`}>
@@ -47,8 +49,8 @@ const Cities = () => {
                   src={city.flag_icon}
                 />
               </Link>
-              <hr className='mx-auto border-t-4 border-dotted w-32' />
-              <h5 class='my-2 h5'>{city.name}</h5>
+              <hr className="mx-auto border-t-4 border-dotted w-32" />
+              <h5 className="my-2 h5">{city.name}</h5>
             </div>
           ))}
         </div>
