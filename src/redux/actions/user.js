@@ -25,7 +25,6 @@ export const login = (userData, location) => (dispatch) => {
       });
       const res = response.data;
       localStorage.setItem('token', res[Object.keys(res)[1]]);
-      localStorage.setItem('user', JSON.stringify(res[Object.keys(res)[0]]));
 
       location('/cities');
     })
@@ -63,7 +62,6 @@ export const logout = (location) => (dispatch) => {
   });
   if (localStorage.getItem('token')) {
     localStorage.removeItem('token');
-    localStorage.removeItem('user');
     dispatch({
       type: actions.LOGOUT_SUCCESS,
     });

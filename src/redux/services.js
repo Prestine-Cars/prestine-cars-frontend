@@ -24,10 +24,27 @@ export const signup = async (user) => {
   return response;
 };
 
-const authHeader = () => {
+export const authHeader = () => {
   const token = localStorage.getItem('token');
   if (token) {
-    return token;
+    return `Bearer ${token}`;
   }
-  return {};
+  return false;
+};
+
+export const createCar = async (car) => {
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: authHeader(),
+  };
+  const response = await axios.post(`${BASE_URL}/api/v1/cities/${car.city}/cars`, // to be updated with the concerned city ${}{
+    {
+      model: car.model,
+      photo: car.photo,
+      description: car.description,
+      cost: car.cost,
+    },
+    { headers });
+
+  return { ...response.data };
 };
