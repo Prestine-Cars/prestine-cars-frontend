@@ -1,9 +1,10 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import * as TiSocial from 'react-icons/ti';
 import logo from '../images/green_logo.png';
+import { logout } from '../redux/actions/user';
 
 export default function Sidebar() {
   const [sidebar, setSidebar] = useState(false);
@@ -12,6 +13,11 @@ export default function Sidebar() {
   const showPage = () => {
     if (sidebar) setSidebar(!sidebar);
   };
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  function handleLogout() {
+    dispatch(logout(navigate));
+  }
 
   return (
     <div
@@ -83,13 +89,7 @@ export default function Sidebar() {
                     {title}
                   </NavLink>
                 ))}
-                <NavLink
-                  to="/"
-                  onClick="logout" // to be updated
-                  className="text-sm sm:text-left font-semibold px-3 py-2 hover:bg-primary-300 hover:text-white w-full no-underline text-gray-600 font-body"
-                >
-                  LOGOUT
-                </NavLink>
+                <button className="flex gap-4 px-3 py-2 items-center hover:text-white hover:bg-red-700 font-body" type="button" onClick={handleLogout}>LOGOUT</button>
               </li>
             </>
           )}
