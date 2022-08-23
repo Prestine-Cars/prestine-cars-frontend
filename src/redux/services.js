@@ -48,3 +48,12 @@ export const createCar = async (car) => {
 
   return { ...response.data };
 };
+
+export const deleteCar = async (cityId, CarId) => {
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: authHeader(),
+  };
+  const response = await axios.delete(`${BASE_URL}/api/v1/cities/${cityId}/cars/${CarId}`, { headers });
+  return { ...response.data };
+};
