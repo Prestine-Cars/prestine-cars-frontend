@@ -1,10 +1,10 @@
 import React from 'react';
-import City from '../components/City';
+import Cities from '../components/Cities/Cities';
 
 const CitiesPage = () => (
   <>
     <section>
-      <City />
+      <Cities />
     </section>
   </>
 );
