@@ -8,7 +8,7 @@ import classes from './modules/SignInForm.module.css';
 import logoImg from '../assets/logo.png';
 
 const SignInForm = () => {
-  const { Loader = false, loginError = null } = useSelector(
+  const { Loader = false, formError = null } = useSelector(
     (state) => state.user,
   );
   const [userLogin, setLogin] = useState({
@@ -61,7 +61,7 @@ const SignInForm = () => {
                       )}
                     </div>
 
-                    {loginError && (
+                    {formError && (
                       <p>You have entered an invalid email/password</p>
                     )}
                     <div className="form-outline form-white mb-4">

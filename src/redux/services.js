@@ -24,12 +24,12 @@ export const signup = async (user) => {
   return response;
 };
 
-const authHeader = () => {
+export const authHeader = () => {
   const token = localStorage.getItem('token');
   if (token) {
     return `Bearer ${token}`;
   }
-  return {};
+  return false;
 };
 
 // const { user } = authHeader();
