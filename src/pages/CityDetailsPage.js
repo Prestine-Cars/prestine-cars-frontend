@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCity } from '../redux/reducers/city';
 import classes from '../components/modules/CityDetail.module.css';
@@ -29,7 +29,9 @@ const CityDetailsPage = () => {
     )) || (
       <section className="container">
         <div className={`${classes.test_container}`}>
-          <div className={` d-flex justify-content-center align-items-center ${classes.test_container}`}>
+          <div
+            className={` d-flex justify-content-center align-items-center ${classes.test_container}`}
+          >
             <p className={`${classes.hero_text}`}>{cityData.name}</p>
           </div>
         </div>
@@ -37,24 +39,23 @@ const CityDetailsPage = () => {
           <h2>
             {cityData.name}
             {' '}
-            Details
+            City
           </h2>
           <p>{cityData.description}</p>
         </div>
-        <div className="">
-          {cityData.cars.map((car) => (
-            <div key={car.id} className="card">
-              <img src={car.photo} className="card-img-top" alt={car.name} />
-              <div className="card-body">
-                <h5 className="card-title">{car.name}</h5>
-                <h5 className="card-title">{car.price}</h5>
-                <p className="card-text">{car.description}</p>
-                <Link to="/cities/reservation" className="btn btn-primary">
-                  Reserve
-                </Link>
+        <div className="container">
+          <div className="row">
+            {cityData.cars.map((car) => (
+              <div key={car.id} className="card">
+                <img src={car.photo} className="card-img-top" alt={car.name} />
+                <div className="card-body">
+                  <h5 className="card-title">{car.name}</h5>
+                  <h5 className="card-title">{car.price}</h5>
+                  <p className="card-text">{car.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     )

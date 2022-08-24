@@ -22,34 +22,52 @@
 }
 
 .test_container {
-   background-image: url('https://res.cloudinary.com/optprime/image/upload/v1661263858/Prestine%20Cars/velito-xdI8dBx1SA8-unsplash_zwevn3.jpg');
-	background-size: cover;
-	background-position: center center;
-	color: #fff;
-	height: 40vh;
-   width: 100vw;
-	position: relative;
+  background-image: url('https://res.cloudinary.com/optprime/image/upload/v1661263858/Prestine%20Cars/velito-xdI8dBx1SA8-unsplash_zwevn3.jpg');
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  height: 40vh;
+  width: 100vw;
+  position: relative;
 }
 
 .test_container::after {
-	content: '';
-	background-color: #000;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	opacity: 0.3;
+  content: '';
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.3;
 }
 .test_container * {
-	position: relative;
-	z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .hero_text {
-   font-family: 'Lato', sans-serif;
-	font-size: 4em;
-	font-weight: 300;
-	margin-left: 70px;
-	text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-size: 4em;
+  font-weight: 300;
+  margin-left: 70px;
+  text-transform: uppercase;
+}
+
+.car_wrap {
+  width: 540px !important;
+  height: auto;
+}
+
+.car_img {
+    max-width: 100%;
+    transition: all 0.3s;
+    display: block;
+    width: 16rem;
+    height: auto;
+    transform: scale(1);
+}
+
+.car_img:hover {
+  transform: scale(1.05);
 }

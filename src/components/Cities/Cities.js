@@ -44,7 +44,7 @@ const Cities = () => {
             >
               <Link to={`/cities/${city.id}`}>
                 <img
-                  className={`shadow p-3 mb-2 bg-body rounded ${classes.img}`}
+                  className={`shadow p-3 mb-2 bg-body rounded ${classes.car_img}`}
                   alt={city.name}
                   src={city.flag_icon}
                 />
