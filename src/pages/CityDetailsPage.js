@@ -38,7 +38,7 @@ const CityDetailsPage = () => {
         {city.error}
       </div>
     )) || (
-      <section className="container">
+      <section className={`${classes.content_container}`}>
         <div
           className={`${classes.test_container}`}
         />
@@ -51,7 +51,7 @@ const CityDetailsPage = () => {
           <p>{cityData.description}</p>
           <button
             type="button"
-            className="btn btn-primary"
+            className="bg-lime-500 text-white hover:bg-lime-400 px-6 py-2 rounded-full font-semibold text-decoration-none text-center"
             onClick={() => getCityId(id, navigate)}
           >
             Add car
@@ -59,7 +59,7 @@ const CityDetailsPage = () => {
         </div>
         <div className={`pt-4 ${classes.car_wrapper}`}>
           {cityData.cars.map((car) => (
-            <div key={car.id} className={`shadow p-3 mb-5 bg-body rounded ${classes.car_box}`}>
+            <div key={car.id} className={`shadow pb-3 mb-5 bg-body rounded ${classes.car_box}`}>
               <div className={`${classes.car_img}`}>
                 <img className="rounded img-fluid" src={car.photo} alt={car.name} />
               </div>
