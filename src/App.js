@@ -13,10 +13,11 @@ const App = () => (
   <>
     <BrowserRouter>
       <Sidebar />
-      <div className="flex-1">
+      <div>
         <Routes>
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/" element={<CitiesPage />} />
           <Route path="/cities" element={<CitiesPage />} />
           <Route path="/cities/:id" element={<CityDetailsPage />} />
           <Route path="/cities/:cityId/cars" element={<AddCarPage />} />
