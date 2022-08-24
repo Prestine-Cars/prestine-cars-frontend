@@ -38,19 +38,20 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actions.CITY_REQUEST:
       return {
-        ...state,
         loading: true,
+        city: {},
+        error: null,
       };
     case actions.CITY_RESPONSE:
       return {
-        ...state,
         loading: false,
         city: action.payload,
+        error: null,
       };
     case actions.CITY_FAILURE:
       return {
-        ...state,
         loading: false,
+        city: {},
         error: action.payload,
       };
     default:
