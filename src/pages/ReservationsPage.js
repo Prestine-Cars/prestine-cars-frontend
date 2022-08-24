@@ -1,10 +1,11 @@
 /*eslint-disable*/
 import React from 'react'
+import ReservationList from '../components/ReservationList'
 
 function ReservationsPage() {
   return (
     <div>
-      <h1>Reservation Page</h1>
+      <ReservationList />
     </div>
   )
 }
