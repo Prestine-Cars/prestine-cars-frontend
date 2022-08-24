@@ -8,8 +8,8 @@ import { logout } from '../redux/actions/user';
 
 export default function Sidebar() {
   const [sidebar, setSidebar] = useState(false);
-  const { user, name } = useSelector((state) => state.user);
-  const username = JSON.parse(name).name;
+  const { user } = useSelector((state) => state.user);
+  // const username = JSON.parse(name).name;
   const showSidebar = () => setSidebar(!sidebar);
   const showPage = () => {
     if (sidebar) setSidebar(!sidebar);
@@ -77,7 +77,7 @@ export default function Sidebar() {
         <ul className="sm:ml-2 pt-2 pb-3 pl-0 mt-6 text-center">
           {user && (
             <>
-              <p className="px-4">{`Welcome ${username}!`}</p>
+              {/* <p className="px-4">{`Welcome ${username}!`}</p> */}
 
               <li className="flex flex-col">
                 {[
