@@ -59,7 +59,7 @@ const CityDetailsPage = () => {
         </div>
         <div className={`pt-4 ${classes.car_wrapper}`}>
           {cityData.cars.map((car) => (
-            <div key={car.id} className={`shadow pb-3 mb-5 bg-body rounded ${classes.car_box}`}>
+            <div key={car.id} id={`car_${car.id}`} className={`shadow pb-3 mb-5 bg-body rounded ${classes.car_box}`}>
               <div className={`${classes.car_img}`}>
                 <img className="rounded img-fluid" src={car.photo} alt={car.name} />
               </div>
