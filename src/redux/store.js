@@ -5,6 +5,7 @@ import citiesReducer from './reducers/cities';
 import carReducer from './reducers/car';
 import reservationReducer from './reducers/reservation';
 import addCityReducer from './reducers/addCity';
+import deleteCityReducer from './reducers/deleteCity';
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     cities: citiesReducer,
     city: cityReducer,
     add_city: addCityReducer,
+    delete_city: deleteCityReducer,
     car: carReducer,
     reservation: reservationReducer,
   },
