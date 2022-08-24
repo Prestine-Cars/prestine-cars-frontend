@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCity } from '../redux/reducers/city';
+import { deleteCar } from '../redux/actions/car';
 
 const CityDetailsPage = () => {
   const { id } = useParams();
@@ -16,6 +17,10 @@ const CityDetailsPage = () => {
 
   const getCityId = (id, navigate) => {
     navigate(`/cities/${id}/cars`);
+  };
+
+  const handleDeleteCar = (cityId, CarId) => {
+    dispatch(deleteCar(cityId, CarId));
   };
 
   return (
@@ -57,6 +62,9 @@ const CityDetailsPage = () => {
                 <Link to={`/cities/${id}/cars/${car.id}/add_resevation`} className="btn btn-primary">
                   Reserve
                 </Link>
+                <button type="button" onClick={() => handleDeleteCar(id, car.id)} className="btn btn-danger">
+                  Delete
+                </button>
               </div>
             </div>
           ))}
