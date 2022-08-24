@@ -11,16 +11,20 @@ const actions = {
 };
 
 const user = localStorage.getItem('token');
+const name = localStorage.getItem('user');
+
 const initialState = user
   ? {
     isLoggedIn: true,
     user,
+    name,
     Loader: false,
     formError: null,
   }
   : {
     isLoggedIn: false,
     user: null,
+    name,
     Loader: false,
     formError: null,
   };
@@ -71,6 +75,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         isLoggedIn: false,
         user: null,
+        name,
         Loader: false,
         formError: null,
       };
