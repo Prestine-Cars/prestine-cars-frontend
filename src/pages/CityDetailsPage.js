@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, { useEffect } from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -59,7 +60,7 @@ const CityDetailsPage = () => {
                 <h5 className="card-title">{car.name}</h5>
                 <h5 className="card-title">{car.price}</h5>
                 <p className="card-text">{car.description}</p>
-                <Link to="/cities/reservation" className="btn btn-primary">
+                <Link to={`/cities/${id}/cars/${car.id}/add_resevation`} className="btn btn-primary">
                   Reserve
                 </Link>
                 <button type="button" onClick={() => handleDeleteCar(id, car.id)} className="btn btn-danger">
