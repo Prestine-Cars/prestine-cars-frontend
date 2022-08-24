@@ -55,6 +55,7 @@ export const deleteCar = async (cityId, CarId) => {
     Authorization: authHeader(),
   };
   const response = await axios.delete(`${BASE_URL}/api/v1/cities/${cityId}/cars/${CarId}`, { headers });
+  document.querySelector(`#car_${CarId}`).remove();
   return { ...response.data };
 };
 
