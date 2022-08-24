@@ -47,8 +47,8 @@ const CarForm = () => {
         <input
           type="url"
           id="photo"
-          name="Photo of Car"
-          placeholder="photo"
+          name="photo"
+          placeholder="Photo of Car"
           value={car.photo}
           onChange={handleChange}
           required
@@ -72,7 +72,9 @@ const CarForm = () => {
           onChange={handleChange}
           required
         />
-        <button type="submit" onClick={handleSubmit}>Add car</button>
+        <button type="submit" onClick={handleSubmit}>
+          Add car
+        </button>
       </form>
     </div>
   );

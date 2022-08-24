@@ -1,6 +1,8 @@
 const actionTypes = {
   CREATE_CAR_SUCCESS: 'CREATE_CAR_SUCCESS',
   CREATE_CAR_FAILURE: 'CREATE_CAR_FAILURE',
+  DELETE_CAR_SUCCESS: 'DELETE_CAR_SUCCESS',
+  DELETE_CAR_FAILURE: 'DELETE_CAR_FAILURE',
 };
 
 const initialState = {
@@ -19,6 +21,18 @@ const carReducer = (state = initialState, action) => {
         error: null,
       };
     case actionTypes.CREATE_CAR_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    case actionTypes.DELETE_CAR_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+      };
+    case actionTypes.DELETE_CAR_FAILURE:
       return {
         ...state,
         loading: false,

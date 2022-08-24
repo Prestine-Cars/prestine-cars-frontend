@@ -6,6 +6,8 @@ import CitiesPage from './pages/CitiesPage';
 import CityDetailsPage from './pages/CityDetailsPage';
 import AddCarPage from './pages/AddCarPage';
 import Sidebar from './components/Sidebar';
+import AddReservationPage from './pages/AddReservationPage';
+import ReservationsPage from './pages/ReservationsPage';
 
 const App = () => (
   <>
@@ -18,7 +20,10 @@ const App = () => (
           <Route path="/" element={<CitiesPage />} />
           <Route path="/cities" element={<CitiesPage />} />
           <Route path="/cities/:id" element={<CityDetailsPage />} />
-          <Route path="/add_car/:cityId" element={<AddCarPage />} />
+          <Route path="/cities/:cityId/cars" element={<AddCarPage />} />
+          <Route path="/reservations" element={<ReservationsPage />} />
+          <Route path="/cities/:cityId/cars/:carId/add_resevation" element={<AddReservationPage />} />
+
         </Routes>
       </div>
     </BrowserRouter>
