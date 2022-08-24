@@ -35,11 +35,13 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         user: action.payload,
+        name,
         formError: null,
       };
     case actions.LOGIN_REQUEST:
       return {
         ...state,
+        name,
         Loader: true,
       };
     case actions.LOGIN_FAILURE:
@@ -51,13 +53,14 @@ const reducer = (state = initialState, action) => {
     case actions.SIGNUP_SUCCESS:
       return {
         ...state,
-        user: action.payload,
+        user: null,
         Loader: false,
         formError: null,
       };
     case actions.SIGNUP_REQUEST:
       return {
         ...state,
+        user: null,
         Loader: true,
       };
     case actions.SIGNUP_FAILURE:
@@ -69,6 +72,7 @@ const reducer = (state = initialState, action) => {
     case actions.LOGOUT_REQUEST:
       return {
         ...state,
+        user: null,
       };
     case actions.LOGOUT_SUCCESS:
       return {
