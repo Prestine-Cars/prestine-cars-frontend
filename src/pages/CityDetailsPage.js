@@ -1,6 +1,4 @@
-
 /* eslint-disable jsx-a11y/anchor-is-valid */
-/*eslint-disable*/
 // @ts-nocheck
 import React, { useEffect } from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';
@@ -82,7 +80,7 @@ const CityDetailsPage = () => {
                 </li>
               </ul>
               <div className={`card-body ${classes.car_content}`}>
-              <Link to={`/cities/${id}/cars/${car.id}/add_resevation`} className="bg-lime-500 text-white hover:bg-lime-400 px-6 py-2 rounded-full font-semibold text-decoration-none text-center">
+                <Link to={`/cities/${id}/cars/${car.id}/add_resevation`} className="bg-lime-500 text-white hover:bg-lime-400 px-6 py-2 rounded-full font-semibold text-decoration-none text-center">
                   Reserve
                 </Link>
                 <button type="button" onClick={() => handleDeleteCar(id, car.id)} className="bg-red-500 text-white hover:bg-red-400 px-6 py-2 rounded-full font-semibold text-decoration-none text-center">
