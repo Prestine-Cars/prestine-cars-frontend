@@ -49,19 +49,13 @@ export const createCar = async (car) => {
   return { ...response.data };
 };
 
-export const deleteCar = (cityId, CarId) => (dispatch) => {
-  API.deleteCar(cityId, CarId)
-    .then((response) => {
-      dispatch({
-        type: actionTypes.DELETE_CAR_SUCCESS,
-        payload: response.message,
-      });
-    }).catch((error) => {
-      dispatch({
-        type: actionTypes.DELETE_CAR_FAILURE,
-        payload: error.response.data.error,
-      });
-    });
+export const deleteCar = async (cityId, CarId) => {
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: authHeader(),
+  };
+  const response = await axios.delete(`${BASE_URL}/api/v1/cities/${cityId}/cars/${CarId}`, { headers });
+  return { ...response.data };
 };
 
 
