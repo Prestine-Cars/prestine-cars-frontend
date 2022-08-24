@@ -1,5 +1,5 @@
 .green {
-   color: rgb(151, 191, 15) !important;
+  color: rgb(151, 191, 15) !important;
 }
 
 .img {
@@ -8,6 +8,6 @@
 
 @media screen and (min-width: 800px) {
   .img_wrap {
-  max-width: 30% !important;
-}
+    max-width: 30% !important;
+  }
 }
