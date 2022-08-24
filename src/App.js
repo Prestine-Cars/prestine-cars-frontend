@@ -8,12 +8,13 @@ import AddCarPage from './pages/AddCarPage';
 import Sidebar from './components/Sidebar';
 import AddReservationPage from './pages/AddReservationPage';
 import ReservationsPage from './pages/ReservationsPage';
+import './App.css';
 
 const App = () => (
   <>
     <BrowserRouter>
       <Sidebar />
-      <div>
+      <div className="app_wrapper">
         <Routes>
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
@@ -22,8 +23,10 @@ const App = () => (
           <Route path="/cities/:id" element={<CityDetailsPage />} />
           <Route path="/cities/:cityId/cars" element={<AddCarPage />} />
           <Route path="/reservations" element={<ReservationsPage />} />
-          <Route path="/cities/:cityId/cars/:carId/add_resevation" element={<AddReservationPage />} />
-
+          <Route
+            path="/cities/:cityId/cars/:carId/add_resevation"
+            element={<AddReservationPage />}
+          />
         </Routes>
       </div>
     </BrowserRouter>

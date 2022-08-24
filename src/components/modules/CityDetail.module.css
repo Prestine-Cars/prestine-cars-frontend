@@ -5,6 +5,10 @@
   color: rgb(151, 191, 15) !important;
 }
 
+.content_container {
+  margin: 0 auto;
+}
+
 .half_container {
   width: 100vw;
   background-size: auto auto;
@@ -28,8 +32,9 @@
   background-position: center center;
   color: #fff;
   height: 40vh;
-  width: 100vw;
   position: relative;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .test_container::after {
@@ -70,8 +75,8 @@
 }
 
 .car_box:hover {
-  transition: 0.5s;
-  transform: scale(1.05);
+  transition: 0.2s;
+  transform: scale(1.03);
 }
 
 .car_img img {
@@ -92,6 +97,10 @@
 }
 
 @media screen and (min-width: 950px) {
+  .test_container {
+    width: 100%;
+  }
+
   .car_wrapper {
     width: 95%;
     margin: 0 auto;
@@ -99,6 +108,5 @@
     grid-template-columns: 33% 33% 33%;
     padding: 5px;
     grid-auto-flow: row;
-    grid-gap: 20px 20px;
   }
 }

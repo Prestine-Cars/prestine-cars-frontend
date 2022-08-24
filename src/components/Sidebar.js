@@ -8,7 +8,8 @@ import { logout } from '../redux/actions/user';
 
 export default function Sidebar() {
   const [sidebar, setSidebar] = useState(false);
-  const { user } = useSelector((state) => state.user);
+  const { user, name } = useSelector((state) => state.user);
+  const username = JSON.parse(name).name;
   const showSidebar = () => setSidebar(!sidebar);
   const showPage = () => {
     if (sidebar) setSidebar(!sidebar);
@@ -65,12 +66,19 @@ export default function Sidebar() {
       >
         <NavLink className="hidden sm:flex" to="/cities">
           <section className="hero container max-w-screen-lg mx-auto flex justify-center pb-3">
-            <img src={logo} alt="logo" width={200} className="object-cover object-center" />
+            <img
+              src={logo}
+              alt="logo"
+              width={200}
+              className="object-cover object-center"
+            />
           </section>
         </NavLink>
         <ul className="sm:ml-2 pt-2 pb-3 pl-0 mt-6 text-center">
           {user && (
             <>
+              <p className="px-4">{`Welcome ${username}!`}</p>
+
               <li className="flex flex-col">
                 {[
                   ['CITIES', '/cities'],
@@ -89,7 +97,13 @@ export default function Sidebar() {
                     {title}
                   </NavLink>
                 ))}
-                <button className="flex gap-4 px-3 py-2 items-center hover:text-white hover:bg-red-700 font-body" type="button" onClick={handleLogout}>LOGOUT</button>
+                <button
+                  className="flex gap-4 px-3 py-2 items-center hover:text-white hover:bg-red-700 font-body"
+                  type="button"
+                  onClick={handleLogout}
+                >
+                  LOGOUT
+                </button>
               </li>
             </>
           )}
