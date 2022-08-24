@@ -48,3 +48,17 @@ export const createCar = async (car) => {
 
   return { ...response.data };
 };
+
+export const createReservation = async (reservation) => {
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: authHeader(),
+  };
+  const response = await axios.post(`${BASE_URL}/api/v1/cities/${reservation.cityId}/cars/${reservation.carId}/reservations`, // to be updated with the concerned city ${}{
+    {
+      date: reservation.reserveDate,
+    },
+    { headers });
+
+  return { ...response.data };
+};
