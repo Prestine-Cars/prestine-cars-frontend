@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 // @ts-nocheck
 import React, { useEffect } from 'react';
 import { useNavigate, Link, useParams } from 'react-router-dom';

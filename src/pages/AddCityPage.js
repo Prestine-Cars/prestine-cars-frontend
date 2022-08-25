@@ -25,8 +25,8 @@ const AddCityPage = () => {
   };
 
   return (
-    <div className="">
-      <h1>Add New City</h1>
+    <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+      <h2>Add New City</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-outline form-white mb-4">
           <label htmlFor="name" className="form-label">
@@ -62,7 +62,7 @@ const AddCityPage = () => {
           </label>
         </div>
         <button
-          className="btn btn-primary text-white btn-block mb-2"
+          className="bg-lime-500 text-white hover:bg-lime-400 px-6 py-2 rounded-full font-semibold text-decoration-none text-center"
           type="submit"
         >
           Add City
