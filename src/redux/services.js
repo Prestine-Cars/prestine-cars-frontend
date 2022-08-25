@@ -49,13 +49,13 @@ export const createCar = async (car) => {
   return { ...response.data };
 };
 
-export const deleteCar = async (cityId, CarId) => {
+export const deleteCar = async (car) => {
   const headers = {
     'Content-Type': 'application/json',
     Authorization: authHeader(),
   };
-  const response = await axios.delete(`${BASE_URL}/api/v1/cities/${cityId}/cars/${CarId}`, { headers });
-  document.querySelector(`#car_${CarId}`).remove();
+  const response = await axios.delete(`${BASE_URL}/api/v1/cities/${car.city_id}/cars/${car.id}`, { headers });
+  document.querySelector(`#car_${car.id}`).remove();
   return { ...response.data };
 };
 
