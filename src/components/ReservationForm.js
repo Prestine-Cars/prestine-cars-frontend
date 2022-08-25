@@ -48,27 +48,6 @@ const ResevationForm = () => {
         </button>
       </div>
     </div>
-  // <div className={`test ${classes.main_container}`}>
-  //   <div className="bg-lime-500 opacity-90 content-container">
-  //     <h1>Reserve a prestine car today</h1>
-  //     <div>
-  //       <input
-  //         className="button"
-  //         type="date"
-  //         id="reserveDate"
-  //         name="reserveDate"
-  //         placeholder="Date"
-  //         value={reservation.reserveDate}
-  //         onChange={handleChange}
-  //         required
-  //       />
-  //       <button className="button" type="submit" onClick={handleSubmit}>
-  //         Reserve now
-  //       </button>
-
-  //     </div>
-  //   </div>
-  // </div>
   );
 };
 
