@@ -22,8 +22,12 @@ const CityDetailsPage = () => {
     navigate(`/cities/${id}/cars`);
   };
 
-  const handleDeleteCar = (cityId, CarId) => {
-    dispatch(deleteCar(cityId, CarId));
+  const handleDeleteCar = (car) => {
+    if (car.reservations > 0) {
+      alert('You can not delete this car because it is reserved');
+    } else {
+      dispatch(deleteCar(car));
+    }
   };
 
   return (
@@ -83,7 +87,7 @@ const CityDetailsPage = () => {
                 <Link to={`/cities/${id}/cars/${car.id}/add_resevation`} className="bg-lime-500 text-white hover:bg-lime-400 px-6 py-2 rounded-full font-semibold text-decoration-none text-center">
                   Reserve
                 </Link>
-                <button type="button" onClick={() => handleDeleteCar(id, car.id)} className="bg-red-500 text-white hover:bg-red-400 px-6 py-2 rounded-full font-semibold text-decoration-none text-center">
+                <button type="button" onClick={() => handleDeleteCar(car)} className="bg-red-500 text-white hover:bg-red-400 px-6 py-2 rounded-full font-semibold text-decoration-none text-center">
                   Delete
                 </button>
               </div>
