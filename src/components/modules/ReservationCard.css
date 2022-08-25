@@ -1,0 +1,19 @@
+body {
+  height: 100vh;
+}
+
+.reservation {
+  display: flex;
+  justify-content: space-around;
+  width: 1024px;
+  padding-top: 80px;
+}
+
+h1 {
+  max-width: 720px;
+  margin-right: 80px;
+}
+
+.cities {
+  max-width: 200px;
+}

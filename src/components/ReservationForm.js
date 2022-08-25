@@ -33,6 +33,7 @@ const ResevationForm = () => {
         <p>Classic cars bring me utter happiness. Reserve a car with us today</p>
         <div>
           <input
+            className="button"
             type="date"
             id="reserveDate"
             name="reserveDate"
@@ -41,7 +42,7 @@ const ResevationForm = () => {
             onChange={handleChange}
             required
           />
-          <button type="submit" onClick={handleSubmit}>
+          <button className="button" type="submit" onClick={handleSubmit}>
             Reserve now
           </button>
 
