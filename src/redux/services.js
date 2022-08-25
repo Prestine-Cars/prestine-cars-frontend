@@ -59,7 +59,6 @@ export const deleteCar = async (car) => {
   return { ...response.data };
 };
 
-
 export const createReservation = async (reservation) => {
   const headers = {
     'Content-Type': 'application/json',
@@ -81,7 +80,7 @@ export const fetchReservations = async () => {
   };
   const response = await axios.get(`${BASE_URL}/api/v1/reservations`, { headers });
   return { ...response.data };
-}
+};
 
 export const deleteReservation = async (reservation) => {
   const headers = {
@@ -90,4 +89,4 @@ export const deleteReservation = async (reservation) => {
   };
   const response = await axios.delete(`${BASE_URL}/api/v1/cities/${reservation.car.city_id}/cars/${reservation.car.id}/reservations/${reservation.id}`, { headers });
   return { ...response.data };
-}
+};
