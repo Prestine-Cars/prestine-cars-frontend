@@ -63,7 +63,7 @@ const CityDetailsPage = () => {
         </div>
         <div className={`pt-4 ${classes.car_wrapper}`}>
           {cityData.cars.map((car) => (
-            <div key={car.id} className={`shadow pb-3 mb-5 bg-body rounded ${classes.car_box}`}>
+            <div key={car.id} className={`shadow pb-3 mb-5 bg-body rounded ${classes.car_box}`} id={`car_${car.id}`}>
               <img className="rounded img-fluid" src={car.photo} alt={car.name} />
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">
