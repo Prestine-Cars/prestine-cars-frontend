@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { DeleteReservation } from '../redux/actions/reservation';
