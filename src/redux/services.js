@@ -1,7 +1,7 @@
 /* eslint-disable */
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://prestine-cars-backend.herokuapp.com';
 
 export const login = async (user) => {
   const response = await axios.post(`${BASE_URL}/users/sign_in`, {
@@ -37,7 +37,7 @@ export const createCar = async (car) => {
     'Content-Type': 'application/json',
     Authorization: authHeader(),
   };
-  const response = await axios.post(`${BASE_URL}/api/v1/cities/${car.city}/cars`, // to be updated with the concerned city ${}{
+  const response = await axios.post(`${BASE_URL}/api/v1/cities/${car.city}/cars`,
     {
       model: car.model,
       photo: car.photo,
@@ -55,6 +55,7 @@ export const deleteCar = async (car) => {
     Authorization: authHeader(),
   };
   const response = await axios.delete(`${BASE_URL}/api/v1/cities/${car.city_id}/cars/${car.id}`, { headers });
+  // @ts-ignore
   document.querySelector(`#car_${car.id}`).remove();
   return { ...response.data };
 };

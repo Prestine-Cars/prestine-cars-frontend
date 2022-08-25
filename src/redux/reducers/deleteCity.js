@@ -15,9 +15,12 @@ const initialState = {
 export const deleteCity = (cityId, navigate) => (dispatch) => {
   dispatch({ type: actions.DELETE_CITY_REQUEST });
   axios
-    .delete(`http://localhost:3000/api/v1/cities/${cityId}`, {
-      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
-    })
+    .delete(
+      `https://prestine-cars-backend.herokuapp.com/api/v1/cities/${cityId}`,
+      {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+      },
+    )
     .then((response) => {
       dispatch({
         type: actions.DELETE_CITY_RESPONSE,

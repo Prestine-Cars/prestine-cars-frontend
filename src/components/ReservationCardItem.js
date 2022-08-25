@@ -34,7 +34,7 @@ function ReservationCardItem({ reservations }) {
         <li className="list-group-item">
           Reservation date:
           {' '}
-          {reservation.car.model}
+          {reservation.date}
         </li>
         <li className="list-group-item">
           Reserved car:
@@ -63,6 +63,7 @@ function ReservationCardItem({ reservations }) {
     </div>
   ));
 }
+
 
 ReservationCardItem.propTypes = {
   reservations: PropTypes.shape({
