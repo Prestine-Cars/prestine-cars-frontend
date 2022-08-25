@@ -4,10 +4,6 @@
 
 > This is a Ruby on Rails frontend application, that is used for car rentals. The purpose of this application is to help users rent car when they move to new countries or cities. The Application allows an authenticated user to login to the system, get a list of all available cars and their cities, and book according to preference. The cars' data provides detailed information according to users preference and their budget based on different cities as well as countries. It also has dedicated pages to see a user's reservations and a reservation form.
 
-## Entity relationship diagram
-
-![Diagram]()
-
 ## Front End repository
 
 [Link to the front end repository](https://github.com/Prestine-Cars/prestine-cars-frontend)
@@ -72,19 +68,11 @@ https://prestine-cars-backend.herokuapp.com/api-docs/
 npm start (port=3001)
 ```
 
-### Setup
-
-Follow [this link](https://prestine-cars-backend.herokuapp.com/api-docs/) to visit the [back-end repository]() and start the server on localhost:3000.
-```
-- Ensure your backend is running before you run your frontend
-```
-
 ## Backend Repo
 
 [Book a car Backend](https://prestine-cars-backend.herokuapp.com/api-docs/)
 
 Suggestions:
-Back-end should run in **localhost:3000**
 Front-end should run in **localhost:3001**
 
 
@@ -134,6 +122,7 @@ Give a ⭐️ if you like this project!
 - Our coding partners,
 - Morning session team, and
 - Stand-up team members
+- Car photos -- unsplash
 
 ## 📝 License
 
