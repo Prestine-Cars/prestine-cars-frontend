@@ -1,4 +1,3 @@
-/* eslint-disable */
 import axios from 'axios';
 
 const BASE_URL = 'https://prestine-cars-backend.herokuapp.com';

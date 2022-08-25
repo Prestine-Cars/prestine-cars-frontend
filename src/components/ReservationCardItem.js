@@ -64,7 +64,6 @@ function ReservationCardItem({ reservations }) {
   ));
 }
 
-
 ReservationCardItem.propTypes = {
   reservations: PropTypes.shape({
     id: PropTypes.number,
