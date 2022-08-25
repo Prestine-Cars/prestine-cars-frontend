@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types'; // ES6
 import { DeleteReservation, fetchReservations } from '../redux/actions/reservation';
 import classes from './modules/CityDetail.module.css';
 
@@ -63,19 +63,5 @@ function ReservationCardItem({ reservations }) {
     </div>
   ));
 }
-
-ReservationCardItem.propTypes = {
-  reservations: PropTypes.shape({
-    id: PropTypes.number,
-    car: PropTypes.shape({
-      id: PropTypes.number,
-      model: PropTypes.string,
-      description: PropTypes.string,
-      photo: PropTypes.string,
-      cost: PropTypes.number,
-      city: PropTypes.string,
-    }),
-  }).isRequired,
-};
 
 export default ReservationCardItem;
