@@ -15,7 +15,7 @@ const Cities = () => {
   }, []);
 
   return (
-   <>
+    <>
       <div className={`${classes.cities_header}`}>
         <h3 className="m-2 p-2">Our services are in the following cities</h3>
         <h4 className="mt-4">
@@ -23,16 +23,16 @@ const Cities = () => {
         </h4>
       </div>
       {loading && (
-        <div className="d-flex flex-column justify-content-center align-items-center vh-100">
-          <span className={`spinner-border ${classes.green}`} />
-          <p>Loading the cities...</p>
-        </div>
+      <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+        <span className={`spinner-border ${classes.green}`} />
+        <p>Loading the cities...</p>
+      </div>
       )}
       {' '}
       {error && (
-        <div className="alert alert-danger" role="alert">
-          {error}
-        </div>
+      <div className="alert alert-danger" role="alert">
+        {error}
+      </div>
       )}
       {' '}
       <div className="container">

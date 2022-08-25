@@ -14,7 +14,7 @@ import './App.css';
 const App = () => (
   <>
     <BrowserRouter>
-       <Sidebar />
+      <Sidebar />
       <div className="app_wrapper">
         <Routes>
           <Route path="/signin" element={<SignInPage />} />
