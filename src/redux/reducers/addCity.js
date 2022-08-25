@@ -20,7 +20,7 @@ export const addCity = (city, navigate) => (dispatch) => {
   };
 
   axios
-    .post('http://localhost:3000/api/v1/cities', cityData, {
+    .post('https://prestine-cars-backend.herokuapp.com/api/v1/cities', cityData, {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`,

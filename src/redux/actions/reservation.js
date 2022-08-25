@@ -1,4 +1,3 @@
-/*eslint-disable*/
 import * as API from '../services';
 
 const actionTypes = {
