@@ -23,16 +23,16 @@ const Cities = () => {
         </h4>
       </div>
       {loading && (
-        <div className="d-flex flex-column justify-content-center align-items-center vh-100">
-          <span className={`spinner-border ${classes.green}`} />
-          <p>Loading the cities...</p>
-        </div>
+      <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+        <span className={`spinner-border ${classes.green}`} />
+        <p>Loading the cities...</p>
+      </div>
       )}
       {' '}
       {error && (
-        <div className="alert alert-danger" role="alert">
-          {error}
-        </div>
+      <div className="alert alert-danger" role="alert">
+        {error}
+      </div>
       )}
       {' '}
       <div className="container">
