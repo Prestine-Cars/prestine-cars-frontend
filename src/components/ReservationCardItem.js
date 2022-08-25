@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { DeleteReservation } from '../redux/actions/reservation';
+import './modules/ReservationCard.css';
 
 function ReservationCardItem({ reservations }) {
   const dispatch = useDispatch();
@@ -12,9 +13,9 @@ function ReservationCardItem({ reservations }) {
 
   const result = Object.keys(reservations).map((key) => reservations[key]);
   return result.map((reservation) => (
-    <div key={reservation.id} id={`reservation_${reservation.id}`}>
-      <h1>{reservation.car.model}</h1>
-      <p>{reservation.car.city}</p>
+    <div className="reservation" key={reservation.id} id={`reservation_${reservation.id}`}>
+      <h3>{reservation.car.model}</h3>
+      <p className="cities">{reservation.car.city}</p>
       <p>{reservation.car.cost}</p>
       <p>{reservation.car.photo}</p>
       <p>{reservation.date}</p>
