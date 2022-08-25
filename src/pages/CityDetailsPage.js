@@ -40,10 +40,10 @@ const CityDetailsPage = () => {
     )) || (
       <section className={`${classes.content_container}`}>
         <div
-          className={`${classes.test_container}`}
+          className={`${classes.hero_container}`}
         />
         <div className="text-center my-4 mw-70">
-          <h2>
+          <h2 className={`${classes.hero_text}`}>
             {cityData.name}
             {' '}
             City
@@ -60,9 +60,7 @@ const CityDetailsPage = () => {
         <div className={`pt-4 ${classes.car_wrapper}`}>
           {cityData.cars.map((car) => (
             <div key={car.id} className={`shadow pb-3 mb-5 bg-body rounded ${classes.car_box}`}>
-              <div className={`${classes.car_img}`}>
-                <img className="rounded img-fluid" src={car.photo} alt={car.name} />
-              </div>
+              <img className="rounded img-fluid" src={car.photo} alt={car.name} />
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">
                   Car Model:
