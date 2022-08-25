@@ -4,9 +4,9 @@ import ReservationList from '../components/ReservationList'
 
 function ReservationsPage() {
   return (
-    <div>
+    <section>
       <ReservationList />
-    </div>
+    </section>
   )
 }
 

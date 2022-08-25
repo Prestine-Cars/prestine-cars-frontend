@@ -12,7 +12,7 @@ const actionTypes = {
 };
 
 const newReservation = (reservation, navigate) => (dispatch) => {
-  API.createReservation(reservation, navigate)
+  API.createReservation(reservation)
     .then((response) => {
       dispatch({
         type: actionTypes.CREATE_RESERVATION_SUCCESS,

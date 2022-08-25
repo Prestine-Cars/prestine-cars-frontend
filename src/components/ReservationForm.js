@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
-import './modules/AddReservation.css';
+import classes from './modules/AddReservation.module.css';
 import newReservation from '../redux/actions/reservation';
 
 const ResevationForm = () => {
@@ -28,26 +28,24 @@ const ResevationForm = () => {
   };
 
   return (
-    <div className="main-container">
-      <div className="content-container">
-        <h1>Reserve a car with prestine-car</h1>
-        <p>Classic cars bring me utter happiness. Reserve a car with us today</p>
-        <div>
-          <input
-            className="button"
-            type="date"
-            id="reserveDate"
-            name="reserveDate"
-            placeholder="Date"
-            value={reservation.reserveDate}
-            onChange={handleChange}
-            required
-          />
-          <button className="button" type="submit" onClick={handleSubmit}>
-            Reserve now
-          </button>
-
-        </div>
+    <div className={`${classes.form_container}`}>
+      <div className={`${classes.hero}`}>
+        <p>
+          Book a Prestine Car Today
+        </p>
+        <input
+          className={`${classes.picker}`}
+          type="date"
+          id="reserveDate"
+          name="reserveDate"
+          placeholder="Date"
+          value={reservation.reserveDate}
+          onChange={handleChange}
+          required
+        />
+        <button className={`${classes.button}`} type="submit" onClick={handleSubmit}>
+          Reserve now
+        </button>
       </div>
     </div>
   );
