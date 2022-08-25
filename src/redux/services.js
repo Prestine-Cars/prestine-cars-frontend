@@ -93,6 +93,7 @@ export const deleteReservation = async (reservation) => {
     'Content-Type': 'application/json',
     Authorization: authHeader(),
   };
-  const response = await axios.delete(`${BASE_URL}/api/v1/cities/${reservation.car.city_id}/cars/${reservation.car.car_id}/reservations/${reservation.id}`, { headers });
+  const response = await axios.delete(`${BASE_URL}/api/v1/cities/${reservation.car.city_id}/cars/${reservation.car.id}/reservations/${reservation.id}`, { headers });
+  document.querySelector(`#reservation_${reservation.id}`).remove();
   return { ...response.data };
 }

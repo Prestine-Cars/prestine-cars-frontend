@@ -12,7 +12,7 @@ function ReservationCardItem({ reservations }) {
 
   const result = Object.keys(reservations).map((key) => reservations[key]);
   return result.map((reservation) => (
-    <div key={reservation.id}>
+    <div key={reservation.id} id={`reservation_${reservation.id}`}>
       <h1>{reservation.car.model}</h1>
       <p>{reservation.car.city}</p>
       <p>{reservation.car.cost}</p>

@@ -10,7 +10,6 @@ const ReservationList = () => {
   }, []);
 
   const { reservations, loading } = useSelector((state) => state.reservation);
-  // console.log(reservations);
   return (
     <div className="main-container">
       <div className="content-container">
