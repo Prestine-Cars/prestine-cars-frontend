@@ -1,12 +1,14 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as TiSocial from 'react-icons/ti';
 import logo from '../images/green_logo.png';
 import { logout } from '../redux/actions/user';
+import { deleteCity } from '../redux/reducers/deleteCity';
 
 export default function Sidebar() {
+  const cityId = useSelector((state) => state.city.city.id);
   const [sidebar, setSidebar] = useState(false);
   const { user, name } = useSelector((state) => state.user);
   const username = JSON.parse(name).name;
@@ -16,9 +18,15 @@ export default function Sidebar() {
   };
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+
   function handleLogout() {
     dispatch(logout(navigate));
   }
+
+  const handleDeleteCity = () => {
+    dispatch(deleteCity(cityId, navigate));
+  };
 
   return (
     <div
@@ -84,7 +92,6 @@ export default function Sidebar() {
                   ['CITIES', '/cities'],
                   ['RESERVATIONS', '/reservations'],
                   ['ADD CITY', '/add_city'],
-                  ['DELETE CITY', '/delete_city'],
                 ].map(([title, url]) => (
                   <NavLink
                     to={url}
@@ -97,6 +104,15 @@ export default function Sidebar() {
                     {title}
                   </NavLink>
                 ))}
+                {location.pathname === `/cities/${cityId}` && (
+                  <button
+                    type="button"
+                    className="flex gap-4 px-3 py-2 items-center hover:text-white hover:bg-red-700 font-body"
+                    onClick={handleDeleteCity}
+                  >
+                    DELETE CITY
+                  </button>
+                )}
                 <button
                   className="flex gap-4 px-3 py-2 items-center hover:text-white hover:bg-red-700 font-body"
                   type="button"
