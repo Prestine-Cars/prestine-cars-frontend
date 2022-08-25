@@ -18,7 +18,7 @@
 }
 .form_container * {
 	position: relative;
-	z-index: 1;
+	z-index: 20;
 }
 
 .hero {
@@ -39,7 +39,7 @@
 
 
 .button {
-	 margin: 20px;
+	margin: 20px;
   padding: 10px;
   background-color: white;
   color: #98be20;
@@ -83,4 +83,20 @@
 .button:hover::after {
 	opacity: 1;
 	transform: scaleX(1) scaleY(1);
+}
+
+.picker {
+	margin: 20px;
+  padding: 10px;
+  background-color: white;
+  color: #98be20;
+  font-size: 24px;
+  width: 300px;
+  
+}
+.picker:hover {
+	background-color: transparent;
+	box-shadow: none;
+	color: white;
+	cursor: pointer;
 }

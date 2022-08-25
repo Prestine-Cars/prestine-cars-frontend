@@ -34,7 +34,7 @@ const ResevationForm = () => {
           Book a Prestine Car Today
         </p>
         <input
-          className={`${classes.button}`}
+          className={`${classes.picker}`}
           type="date"
           id="reserveDate"
           name="reserveDate"
