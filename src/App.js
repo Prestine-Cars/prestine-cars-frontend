@@ -9,12 +9,13 @@ import AddCarPage from './pages/AddCarPage';
 import Sidebar from './components/Sidebar';
 import AddReservationPage from './pages/AddReservationPage';
 import ReservationsPage from './pages/ReservationsPage';
+import './App.css';
 
 const App = () => (
   <>
     <BrowserRouter>
       <Sidebar />
-      <div>
+      <div className="app_wrapper">
         <Routes>
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />

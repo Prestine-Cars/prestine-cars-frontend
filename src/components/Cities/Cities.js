@@ -17,10 +17,10 @@ const Cities = () => {
   return (
     <>
       <div className="text-center m-4 p-4">
-        <h2 className="text-center m-2 p-2">These are the available Cities</h2>
-        <h3 className="text-center mt-2">
+        <h3 className="text-center m-2 p-2">Our services are in the following cities</h3>
+        <h4 className="text-center mt-4">
           Choose a country flag to see available cars
-        </h3>
+        </h4>
       </div>
       {loading && (
         <div className="d-flex flex-column justify-content-center align-items-center vh-100">
