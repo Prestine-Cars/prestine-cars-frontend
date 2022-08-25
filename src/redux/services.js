@@ -1,7 +1,7 @@
 /* eslint-disable */
 import axios from 'axios';
 
-const BASE_URL = 'https://prestine-cars-backend.herokuapp.com/';
+const BASE_URL = 'https://prestine-cars-backend.herokuapp.com';
 
 export const login = async (user) => {
   const response = await axios.post(`${BASE_URL}/users/sign_in`, {
