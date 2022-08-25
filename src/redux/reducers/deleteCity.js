@@ -19,7 +19,7 @@ export const deleteCity = (cityId, navigate) => (dispatch) => {
       `https://prestine-cars-backend.herokuapp.com/api/v1/cities/${cityId}`,
       {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
-      }
+      },
     )
     .then((response) => {
       dispatch({
