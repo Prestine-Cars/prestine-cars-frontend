@@ -22,8 +22,12 @@ const CityDetailsPage = () => {
     navigate(`/cities/${id}/cars`);
   };
 
-  const handleDeleteCar = (cityId, CarId) => {
-    dispatch(deleteCar(cityId, CarId));
+  const handleDeleteCar = (car) => {
+    if (car.reservations > 0) {
+      alert('You can not delete this car because it is reserved');
+    } else {
+      dispatch(deleteCar(car));
+    }
   };
 
   return (
@@ -38,12 +42,12 @@ const CityDetailsPage = () => {
         {city.error}
       </div>
     )) || (
-      <section className="container">
+      <section className={`${classes.content_container}`}>
         <div
-          className={`${classes.test_container}`}
+          className={`${classes.hero_container}`}
         />
         <div className="text-center my-4 mw-70">
-          <h2>
+          <h2 className={`${classes.hero_text}`}>
             {cityData.name}
             {' '}
             City
@@ -51,7 +55,7 @@ const CityDetailsPage = () => {
           <p>{cityData.description}</p>
           <button
             type="button"
-            className="btn btn-primary"
+            className="bg-lime-500 text-white hover:bg-lime-400 px-6 py-2 rounded-full font-semibold text-decoration-none text-center"
             onClick={() => getCityId(id, navigate)}
           >
             Add car
@@ -59,10 +63,8 @@ const CityDetailsPage = () => {
         </div>
         <div className={`pt-4 ${classes.car_wrapper}`}>
           {cityData.cars.map((car) => (
-            <div key={car.id} className={`shadow p-3 mb-5 bg-body rounded ${classes.car_box}`}>
-              <div className={`${classes.car_img}`}>
-                <img className="rounded img-fluid" src={car.photo} alt={car.name} />
-              </div>
+            <div key={car.id} className={`shadow pb-3 mb-5 bg-body rounded ${classes.car_box}`}>
+              <img className="rounded img-fluid" src={car.photo} alt={car.name} />
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">
                   Car Model:
@@ -83,7 +85,7 @@ const CityDetailsPage = () => {
                 <Link to={`/cities/${id}/cars/${car.id}/add_resevation`} className="bg-lime-500 text-white hover:bg-lime-400 px-6 py-2 rounded-full font-semibold text-decoration-none text-center">
                   Reserve
                 </Link>
-                <button type="button" onClick={() => handleDeleteCar(id, car.id)} className="bg-red-500 text-white hover:bg-red-400 px-6 py-2 rounded-full font-semibold text-decoration-none text-center">
+                <button type="button" onClick={() => handleDeleteCar(car)} className="bg-red-500 text-white hover:bg-red-400 px-6 py-2 rounded-full font-semibold text-decoration-none text-center">
                   Delete
                 </button>
               </div>

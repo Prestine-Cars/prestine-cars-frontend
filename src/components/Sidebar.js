@@ -1,23 +1,32 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as TiSocial from 'react-icons/ti';
 import logo from '../images/green_logo.png';
 import { logout } from '../redux/actions/user';
+import { deleteCity } from '../redux/reducers/deleteCity';
 
 export default function Sidebar() {
+  const cityId = useSelector((state) => state.city.city.id);
   const [sidebar, setSidebar] = useState(false);
   const { user } = useSelector((state) => state.user);
+  // const username = JSON.parse(name).name;
   const showSidebar = () => setSidebar(!sidebar);
   const showPage = () => {
     if (sidebar) setSidebar(!sidebar);
   };
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+
   function handleLogout() {
     dispatch(logout(navigate));
   }
+
+  const handleDeleteCity = () => {
+    dispatch(deleteCity(cityId, navigate));
+  };
 
   return (
     <div
@@ -65,18 +74,24 @@ export default function Sidebar() {
       >
         <NavLink className="hidden sm:flex" to="/cities">
           <section className="hero container max-w-screen-lg mx-auto flex justify-center pb-3">
-            <img src={logo} alt="logo" width={200} className="object-cover object-center" />
+            <img
+              src={logo}
+              alt="logo"
+              width={200}
+              className="object-cover object-center"
+            />
           </section>
         </NavLink>
         <ul className="sm:ml-2 pt-2 pb-3 pl-0 mt-6 text-center">
           {user && (
             <>
+              {/* <p className="px-4">{`Welcome ${username}!`}</p> */}
+
               <li className="flex flex-col">
                 {[
                   ['CITIES', '/cities'],
                   ['RESERVATIONS', '/reservations'],
                   ['ADD CITY', '/add_city'],
-                  ['DELETE CITY', '/delete_city'],
                 ].map(([title, url]) => (
                   <NavLink
                     to={url}
@@ -89,7 +104,22 @@ export default function Sidebar() {
                     {title}
                   </NavLink>
                 ))}
-                <button className="flex gap-4 px-3 py-2 items-center hover:text-white hover:bg-red-700 font-body" type="button" onClick={handleLogout}>LOGOUT</button>
+                {location.pathname === `/cities/${cityId}` && (
+                  <button
+                    type="button"
+                    className="flex gap-4 px-3 py-2 items-center hover:text-white hover:bg-red-700 font-body"
+                    onClick={handleDeleteCity}
+                  >
+                    DELETE CITY
+                  </button>
+                )}
+                <button
+                  className="flex gap-4 px-3 py-2 items-center hover:text-white hover:bg-red-700 font-body"
+                  type="button"
+                  onClick={handleLogout}
+                >
+                  LOGOUT
+                </button>
               </li>
             </>
           )}

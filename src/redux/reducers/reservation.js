@@ -10,7 +10,7 @@ const actionTypes = {
 };
 
 const initialState = {
-  loading: false,
+  loading: true,
   error: null,
   reservations: [],
 };
