@@ -17,7 +17,7 @@ export const getCities = () => (dispatch) => {
     type: actions.CITIES_REQUEST,
   });
   axios
-    .get('http://localhost:3000/api/v1/cities', {
+    .get('https://prestine-cars-backend.herokuapp.com/api/v1/cities', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     })
     .then((response) => {
