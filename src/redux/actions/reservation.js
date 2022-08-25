@@ -48,15 +48,15 @@ export const fetchReservations = () => (dispatch) => {
 
 export const DeleteReservation = (reservation) => (dispatch) => {
   API.deleteReservation(reservation)
-    .then((response) => {
+    .then(() => {
       dispatch({
         type: actionTypes.DELETE_RESERVATION_SUCCESS,
-        payload: response.message,
+        payload: reservation,
       });
     }).catch((error) => {
       dispatch({
         type: actionTypes.DELETE_RESERVATION_FAILURE,
-        payload: error.response.error,
+        payload: error.response.data.error,
       });
     });
 };

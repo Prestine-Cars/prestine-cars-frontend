@@ -1,24 +1,21 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { DeleteReservation, fetchReservations } from '../redux/actions/reservation';
+import { DeleteReservation } from '../redux/actions/reservation';
 import classes from './modules/CityDetail.module.css';
 
 function ReservationCardItem({ reservations }) {
   const dispatch = useDispatch();
 
-  const handleDelete = async (id) => {
-    await dispatch(DeleteReservation(id));
-    await dispatch(fetchReservations());
+  const handleDelete = (id) => {
+    dispatch(DeleteReservation(id));
   };
 
   while (reservations === undefined || typeof reservations !== 'object') {
     return <div>Loading...</div>;
   }
 
-  const result = Object.keys(reservations).map((key) => reservations[key]);
-
-  return result.map((reservation) => (
+  return reservations.map((reservation) => (
     <div
       className={`shadow pb-3 mb-5 bg-body rounded ${classes.car_box}`}
       key={reservation.id}

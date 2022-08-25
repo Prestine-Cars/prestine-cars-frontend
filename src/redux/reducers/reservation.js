@@ -41,7 +41,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: null,
-        reservations: action.payload,
+        reservations: Object.keys(action.payload).map((key) => action.payload[key]),
       };
     case actionTypes.FETCH_RESERVATIONS_FAILURE:
       return {
@@ -54,7 +54,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: null,
-        reservations: action.payload,
+        reservations: Object.keys(state.reservations).map(
+          (key) => state.reservations[key],
+        ).filter(
+          (reservation) => reservation.id !== action.payload.id,
+        ),
       };
     case actionTypes.DELETE_RESERVATION_FAILURE:
       return {
