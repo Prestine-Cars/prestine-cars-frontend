@@ -24,8 +24,8 @@ const newCar = (car, navigate) => (dispatch) => {
     });
 };
 
-export const deleteCar = (cityId, CarId) => (dispatch) => {
-  API.deleteCar(cityId, CarId)
+export const deleteCar = (car) => (dispatch) => {
+  API.deleteCar(car)
     .then((response) => {
       dispatch({
         type: actionTypes.DELETE_CAR_SUCCESS,

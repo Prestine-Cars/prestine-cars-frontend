@@ -7,7 +7,7 @@ const actions = {
 };
 
 const initialState = {
-  loading: false,
+  loading: true,
   cities: [],
   error: null,
 };
@@ -38,19 +38,20 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actions.CITIES_REQUEST:
       return {
-        ...state,
         loading: true,
+        cities: [],
+        error: null,
       };
     case actions.CITIES_RESPONSE:
       return {
-        ...state,
         loading: false,
         cities: action.payload,
+        error: null,
       };
     case actions.CITIES_FAILURE:
       return {
-        ...state,
         loading: false,
+        cities: [],
         error: action.payload,
       };
     default:

@@ -22,8 +22,12 @@ const CityDetailsPage = () => {
     navigate(`/cities/${id}/cars`);
   };
 
-  const handleDeleteCar = (cityId, CarId) => {
-    dispatch(deleteCar(cityId, CarId));
+  const handleDeleteCar = (car) => {
+    if (car.reservations > 0) {
+      alert('You can not delete this car because it is reserved');
+    } else {
+      dispatch(deleteCar(car));
+    }
   };
 
   return (
@@ -59,7 +63,7 @@ const CityDetailsPage = () => {
         </div>
         <div className={`pt-4 ${classes.car_wrapper}`}>
           {cityData.cars.map((car) => (
-            <div key={car.id} className={`shadow pb-3 mb-5 bg-body rounded ${classes.car_box}`}>
+<div key={car.id} className={`shadow pb-3 mb-5 bg-body rounded ${classes.car_box}`}>
               <img className="rounded img-fluid" src={car.photo} alt={car.name} />
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">
@@ -81,7 +85,7 @@ const CityDetailsPage = () => {
                 <Link to={`/cities/${id}/cars/${car.id}/add_resevation`} className="bg-lime-500 text-white hover:bg-lime-400 px-6 py-2 rounded-full font-semibold text-decoration-none text-center">
                   Reserve
                 </Link>
-                <button type="button" onClick={() => handleDeleteCar(id, car.id)} className="bg-red-500 text-white hover:bg-red-400 px-6 py-2 rounded-full font-semibold text-decoration-none text-center">
+                <button type="button" onClick={() => handleDeleteCar(car)} className="bg-red-500 text-white hover:bg-red-400 px-6 py-2 rounded-full font-semibold text-decoration-none text-center">
                   Delete
                 </button>
               </div>
