@@ -54,6 +54,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         user: null,
+        name,
         Loader: false,
         formError: null,
       };
@@ -73,6 +74,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         user: null,
+        name,
       };
     case actions.LOGOUT_SUCCESS:
       return {

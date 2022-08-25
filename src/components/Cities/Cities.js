@@ -16,9 +16,9 @@ const Cities = () => {
 
   return (
     <>
-      <div className="text-center m-4 p-4">
-        <h3 className="text-center m-2 p-2">Our services are in the following cities</h3>
-        <h4 className="text-center mt-4">
+      <div className={`${classes.cities_header}`}>
+        <h3 className="m-2 p-2">Our services are in the following cities</h3>
+        <h4 className="mt-4">
           Choose a country flag to see available cars
         </h4>
       </div>
