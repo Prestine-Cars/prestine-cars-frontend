@@ -1,8 +1,22 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { cleanup } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import renderer from 'react-test-renderer';
+import store from './redux/store';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App', () => {
+  afterEach(cleanup);
+
+  test('renders learn react link', () => {
+    const tree = renderer
+      .create(
+        <Provider store={store}>
+          <App />
+        </Provider>
+      )
+      .toJSON();
+
+    expect(tree).toMatchSnapshot();
+  });
 });
