@@ -1,6 +1,5 @@
 .sign_up_card {
   margin: 0 auto;
-  margin-top: -100px;
   background: hsla(0, 0%, 100%, 0.8) !important;
   backdrop-filter: blur(30px) !important;
 }
@@ -25,8 +24,7 @@
 }
 
 .logo-image {
-  width: 70vw;
-  margin: 0 auto;
+  display: none;
 }
 
 .logo {
@@ -38,6 +36,7 @@
 
 @media screen and (min-width: 800px) {
   .logo-image {
+    display: block;
     width: 15vw;
     margin: 0 auto;
   }
