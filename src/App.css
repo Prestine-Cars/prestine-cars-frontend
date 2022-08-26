@@ -1,6 +1,5 @@
 .app_wrapper {
   min-height: 100vh;
-  margin-left: 20%;
 }
 
 @media screen and (min-width: 950px) {
