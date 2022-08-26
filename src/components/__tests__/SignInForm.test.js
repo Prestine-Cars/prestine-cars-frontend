@@ -5,8 +5,8 @@ import { BrowserRouter } from 'react-router-dom';
 import store from '../../redux/store';
 import SignInForm from '../SignInForm';
 
-describe('Test presence of Navbar', () => {
-  test('should render Navbar component', () => {
+describe('Test presence of Sign In Form', () => {
+  test('should render Sign In Form component', () => {
     const signInForm = renderer
       .create(
         <BrowserRouter>
