@@ -8,12 +8,12 @@ import App from './App';
 describe('App', () => {
   afterEach(cleanup);
 
-  test('renders learn react link', () => {
+  test('renders the App component correctly', () => {
     const tree = renderer
       .create(
         <Provider store={store}>
           <App />
-        </Provider>
+        </Provider>,
       )
       .toJSON();
 
