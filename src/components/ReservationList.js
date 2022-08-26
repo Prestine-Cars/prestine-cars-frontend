@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchReservations } from '../redux/actions/reservation';
@@ -14,7 +15,12 @@ const ReservationList = () => {
 
   return (
     <section className={`${classes.content_container}`}>
-      {loading && <p>Loading...</p>}
+      {loading && (
+      <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+        <span className={`spinner-border ${classes.green}`} />
+        <p>Loading your reservations...</p>
+      </div>
+      )}
       <div className="text-center my-4 mw-70">
         <h2 className={`${classes.hero_text}`}>These are your Reservations</h2>
       </div>
