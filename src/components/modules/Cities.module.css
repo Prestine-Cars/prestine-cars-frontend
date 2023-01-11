@@ -1,0 +1,23 @@
+.green {
+  color: rgb(151, 191, 15) !important;
+}
+
+.img {
+  max-width: 18rem;
+}
+
+.cities_header {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+@media screen and (min-width: 800px) {
+  .img_wrap {
+    max-width: 30% !important;
+  }
+}

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test presence of Cities should render Cities component 1`] = `
+Array [
+  <div
+    className="cities_header"
+  >
+    <h3
+      className="m-2 p-2"
+    >
+      Our services are in the following cities
+    </h3>
+    <h4
+      className="mt-4"
+    >
+      Choose a country flag to see available cars
+    </h4>
+  </div>,
+  <div
+    className="d-flex flex-column justify-content-center align-items-center vh-100"
+  >
+    <span
+      className="spinner-border green"
+    />
+    <p>
+      Loading the cities...
+    </p>
+  </div>,
+  " ",
+  " ",
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    />
+  </div>,
+]
+`;

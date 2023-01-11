@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test presence of Sign Up Form should render Sign Up Form component 1`] = `
+Array [
+  <div
+    className="logo-image"
+  >
+    <img
+      alt="Logo"
+      className="logo"
+      src="logo.png"
+    />
+  </div>,
+  <div
+    className="container pt-4 mt-4"
+  >
+    <div
+      className="row d-flex justify-content-center align-items-center h-100"
+    >
+      <div
+        className="col-12 col-md-8 col-lg-6 col-xl-5"
+      >
+        <div
+          className="card shadow-5-strong sign_up_card"
+        >
+          <div
+            className="card-body p-5 text-center"
+          >
+            <div
+              className="mb-md-2 mt-md-2 pb-5"
+            >
+              <h2
+                className="fw-bold mb-2 text-uppercase"
+              >
+                Sign Up
+              </h2>
+              <p
+                className="text-black-50 mb-5"
+              >
+                Please fill out the form
+              </p>
+              <form
+                onSubmit={[Function]}
+              >
+                <div
+                  className="loader"
+                />
+                <div
+                  className="form-outline form-white mb-4"
+                >
+                  <label
+                    className="form-label"
+                    htmlFor="name"
+                  >
+                    <input
+                      className="form-control form-control-lg"
+                      name="name"
+                      onChange={[Function]}
+                      placeholder="Name"
+                      required={true}
+                      type="text"
+                    />
+                  </label>
+                </div>
+                <div
+                  className="form-outline form-white mb-4"
+                >
+                  <label
+                    className="form-label"
+                    htmlFor="email"
+                  >
+                    <input
+                      className="form-control form-control-lg"
+                      name="email"
+                      onChange={[Function]}
+                      placeholder="Email"
+                      required={true}
+                      type="email"
+                    />
+                  </label>
+                </div>
+                <div
+                  className="form-outline form-white mb-4"
+                >
+                  <label
+                    className="form-label"
+                    htmlFor="password"
+                  >
+                    <input
+                      className="form-control form-control-lg"
+                      name="password"
+                      onChange={[Function]}
+                      placeholder="Password"
+                      required={true}
+                      type="password"
+                    />
+                  </label>
+                </div>
+                <button
+                  className="btn text-white btn-block mb-2 green_btn"
+                  type="submit"
+                >
+                  Sign Up
+                </button>
+              </form>
+            </div>
+            <div>
+              <p
+                className="mb-0"
+              >
+                Already have an account?
+                 
+                <a
+                  className="fw-bold green_link"
+                  href="/signin"
+                  onClick={[Function]}
+                >
+                  Login
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;

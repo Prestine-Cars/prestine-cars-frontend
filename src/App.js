@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SignInPage from './pages/SignInPage';
+import SignUpPage from './pages/SignUpPage';
+import CitiesPage from './pages/CitiesPage';
+import AddCityPage from './pages/AddCityPage';
+import CityDetailsPage from './pages/CityDetailsPage';
+import AddCarPage from './pages/AddCarPage';
+import Sidebar from './components/Sidebar';
+import AddReservationPage from './pages/AddReservationPage';
+import ReservationsPage from './pages/ReservationsPage';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <>
+    <BrowserRouter>
+      <Sidebar />
+      <div className="app_wrapper">
+        <Routes>
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/" element={<CitiesPage />} />
+          <Route path="/cities" element={<CitiesPage />} />
+          <Route path="/add_city" element={<AddCityPage />} />
+          <Route path="/cities/:id" element={<CityDetailsPage />} />
+          <Route path="/cities/:cityId/cars" element={<AddCarPage />} />
+          <Route path="/reservations" element={<ReservationsPage />} />
+          <Route
+            path="/cities/:cityId/cars/:carId/add_resevation"
+            element={<AddReservationPage />}
+          />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  </>
+);
 
 export default App;

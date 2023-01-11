@@ -1,70 +1,129 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Car Reservation App
 
-## Available Scripts
+> This is a Ruby on Rails frontend application, that is used for car rentals. The purpose of this application is to help users rent car when they move to new countries or cities. The Application allows an authenticated user to login to the system, get a list of all available cars and their cities, and book according to preference. The cars' data provides detailed information according to users preference and their budget based on different cities as well as countries. It also has dedicated pages to see a user's reservations and a reservation form.
 
-In the project directory, you can run:
+## Front End repository
 
-### `npm start`
+[Link to the front end repository](https://github.com/Prestine-Cars/prestine-cars-frontend)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Kanban board
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Link to the Kanban board](https://github.com/orgs/Prestine-Cars/projects/1/views/1)
+- [Initial Kanban board screenshot]()
+- [Final Kanban board screenshot]()
+- [Our team consist of 4 members](#authors)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Built With
 
-### `npm run build`
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- React
+- Redux
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Hosting services
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- The project(frontend) is hosted on Heruku
+```
+https://prestine-cars-backend.herokuapp.com/api-docs/
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
+- Follow setup instructions below to get a copy locally.
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- React
+- Git and Github
+- Terminal
+- Browser
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Install
+- [Git](https://git-scm.com/downloads)
+- [Node](https://nodejs.org/en/download/)
+- Cloning the repository
+  - ```
+    git@github.com:Prestine-Cars/prestine-cars-frontend.git
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Navigate to the project's root folder:
+  - ```
+    cd into projects folder
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Install dependencies:
+  - ```
+    run npm install
+    ```
 
-## Learn More
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Run the server on the specified port:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm start (port=3001)
+```
 
-### Code Splitting
+## Backend Repo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[Book a car Backend](https://prestine-cars-backend.herokuapp.com/api-docs/)
 
-### Analyzing the Bundle Size
+Suggestions:
+Front-end should run in **localhost:3001**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+👤 **Benmuiruri**
 
-### Advanced Configuration
+- GitHub: [@Ben Kiarie](https://github.com/Benmuiruri)
+- Twitter: [@Optimize](https://twitter.com/_optimize)
+- LinkedIn: [@Ben Kiarie](https://www.linkedin.com/in/benjamin-kiarie-180b66149/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+👤 **Munezero Christian**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- GitHub: [@Kait Cham](https://github.com/kaitcham)
+- Twitter: [@kait Cham](https://twitter.com/kaitcham)
+- LinkedIn: [Kait Cham](https://www.linkedin.com/in/kaitcham/)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+👤 **Munezero Christian**
+
+- GitHub: [@selma-belhadj](https://github.com/selma-belhadj)
+- Twitter: [@Bel_Selma16](https://twitter.com/Bel_Selma16)
+- LinkedIn: [@selma-belhadj](https://www.linkedin.com/in/selma-belhadj/)
+
+👤 **Sirri Ryisa**
+
+- GitHub: [@Sirri Ryisa](https://github.com/SirriRyisa)
+- Twitter: [@Sirri Ryisa](https://twitter.com/n_ryisa)
+- LinkedIn: [Sirri Ryisa](https://www.linkedin.com/in/sirri-ngwa-ryisa/)
+
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse,
+- Our coding partners,
+- Morning session team, and
+- Stand-up team members
+- Car photos -- unsplash
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test presence of Reservations should renderReservations component 1`] = `
+<section
+  className="content_container"
+>
+  <div
+    className="d-flex flex-column justify-content-center align-items-center vh-100"
+  >
+    <span
+      className="spinner-border green"
+    />
+    <p>
+      Loading your reservations...
+    </p>
+  </div>
+  <div
+    className="text-center my-4 mw-70"
+  >
+    <h2
+      className="hero_text"
+    >
+      These are your Reservations
+    </h2>
+  </div>
+  <div
+    className="pt-4 car_wrapper"
+  />
+</section>
+`;
